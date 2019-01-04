@@ -4,21 +4,18 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <title>Nouveau Billet</title>
   </head>
   <body id="new_billet">
-    <header id="header">
-      <h1>Blog</h1>
-      <nav id="h_nav">
-        <ul>
-          <li><a href="index.php">Accueil</a></li>
-          <li><a href="#">Themes</a></li>
-          <li><a href="billet.php">Billets</a></li>
-          <li><a href="#">Connexion</a></li>
-        </ul>
-      </nav>
-    </header>
+
     <main>
       <h1>Nouveau Billet</h1>
       <form class="" action="billet.php" method="post">

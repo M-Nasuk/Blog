@@ -12,12 +12,14 @@
     <script type="text/javascript" src="js/utilities.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <title>Blog</title>
+    <title>Post</title>
   </head>
-  <body id="accueil">
-    <p></p>
+  <body id="post">
     <main>
+      <section>
 
+
+      </section>
     </main>
   </body>
 </html>

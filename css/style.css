@@ -11,14 +11,32 @@ body {
   font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
+h1 {
+  font-size: 6em;
+}
+
+h2 {
+  font-size: 4em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 2.5em;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* HEADER Style*/
 #header {
   color: #000;
   text-align: center;
-  margin-bottom: 3rem;
 }
-#header h1 {
-  margin: 2rem;
-  font-size: 6rem;
+#h_nav {
+  margin-bottom: 6rem;
 }
 #h_nav ul li:not(:last-child) {
   margin-bottom: 1rem;
@@ -26,26 +44,46 @@ body {
 #h_nav ul li, #new_billet form ul li {
   list-style-type: none;
 }
-#h_nav a {
-  text-decoration: none;
-  color: inherit;
-  font-size: 2.5rem;
+#h_nav a h2 {
+  color: #000;
+  display: inline-block;
   transition: 0.5s;
+  font-weight: normal;
 }
-#h_nav a:hover {
+#h_nav a h2:hover {
   color: #FFF;
   background-color: #000;
   border-radius: 5px;
 }
 
-main h1 {
+
+/* Accueil Article Style */
+.art {
+  padding: 2rem;
+}
+.art img {
+  max-width: 100%;
+}
+.art h3 {
+  display: inline-block;
+}
+.art > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* Post Article Style */
+#post .art > *:not(:last-child) {
+  margin-bottom: 2rem;
+}
+/* New Billet Page Style */
+#new_billet main h1 {
   text-align: center;
   font-weight: normal;
   font-size: 4rem;
   padding: 5px 10px;
   border: 2px solid #000;
 }
-fieldset {
+#new_billet fieldset {
   border: none;
   font-size: 2rem;
 }
@@ -63,15 +101,15 @@ fieldset {
   text-align: right;
   margin-right: 5px;
 }
-label[for='description'] {
+#new_billet label[for='description'] {
   vertical-align: top;
 }
-select {
+#new_billet select {
   width: 50%;
 }
-button {
+#new_billet button {
   padding: 5px 10px;
 }
-input[name='title'], textarea {
+#new_billet input[name='title'], textarea {
   border: 2px solid #000;
 }
