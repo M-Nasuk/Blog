@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#header {
+  color: #000;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#header h1 {
+  margin: 2rem;
+  font-size: 6rem;
+}
+#h_nav ul li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+#h_nav ul li, #new_billet form ul li {
+  list-style-type: none;
+}
+#h_nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2.5rem;
+  transition: 0.5s;
+}
+#h_nav a:hover {
+  color: #FFF;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+main h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 4rem;
+  padding: 5px 10px;
+  border: 2px solid #000;
+}
+fieldset {
+  border: none;
+  font-size: 2rem;
+}
+#new_billet form ul li:not(:last-child) {
+  display: grid;
+  grid-template-areas: "one two";
+  grid-template-columns: 0.15FR 0.8FR;
+  margin: 0 auto 1rem;
+}
+#new_billet form ul li:last-child {
+  text-align: center;
+  margin-top: 3rem;
+}
+#new_billet form ul li label {
+  text-align: right;
+  margin-right: 5px;
+}
+label[for='description'] {
+  vertical-align: top;
+}
+select {
+  width: 50%;
+}
+button {
+  padding: 5px 10px;
+}
+input[name='title'], textarea {
+  border: 2px solid #000;
+}
