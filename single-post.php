@@ -15,13 +15,14 @@
     <title>Post</title>
   </head>
   <body id="post">
+
     <main>
       <section id="s_post">
-
 
       </section>
       <section id="s_comms">
         <h2>nb_comms sur "titre_post"</h2>
+        
       </section>
     </main>
   </body>

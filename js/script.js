@@ -19,12 +19,12 @@ function htmlP(response)
   $('#accueil .art p').html(response);
 }
 
-function appendSection(response)
+function appendPost(response)
 {
   $('#post main #s_post').append(response);
 }
 
-function appendSection(response)
+function appendComms(response)
 {
   $('#post main #s_comms').append(response);
 }
