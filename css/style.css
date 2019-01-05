@@ -60,6 +60,7 @@ a {
 /* Accueil Article Style */
 .art {
   padding: 2rem;
+  margin-bottom: 3rem;
 }
 .art img {
   max-width: 100%;

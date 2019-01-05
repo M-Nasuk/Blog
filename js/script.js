@@ -9,17 +9,22 @@ function prependBody(response)
   $('body').prepend(response);
 }
 
-function prependMain(response)
+function appendMain(response)
 {
-  $('#accueil main').prepend(response);
-}
-
-function appendSection(response)
-{
-  $('#post main section').append(response);
+  $('#accueil main').append(response);
 }
 
 function htmlP(response)
 {
   $('#accueil .art p').html(response);
+}
+
+function appendSection(response)
+{
+  $('#post main #s_post').append(response);
+}
+
+function appendSection(response)
+{
+  $('#post main #s_comms').append(response);
 }
