@@ -1,16 +1,16 @@
 $(document).ready(function () {
 
-getData('./header.php', prependBody);
+getData('./src/header.php', prependBody);
 
 for (let i = 0; i < 5; i++) {
-  getData('./post.php', appendArticles);
-  getData('./post-desc.php', htmlP);
+  getData('./src/post.php', appendArticles);
+  getData('./src/post-desc.php', htmlP);
 }
 
 getData('./post.php', appendPost);
 
 for (let i = 0; i < 3; i++) {
-  getData('./comms.php', appendComms);
+  getData('./src/comms.php', appendComms);
 }
 
 })
