@@ -31,39 +31,51 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
 li {
   list-style-type: none;
 }
+
 
 /* HEADER Style*/
 #header {
   color: #000;
   text-align: center;
+  margin-bottom: 4rem;
 }
 #h_nav {
-  margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
 }
 #h_nav ul li {
   margin-bottom: 1rem;
 }
-
-#h_nav ul li {
+#h_nav h2 {
+  font-weight: normal;
+}
+/*#h_nav ul li {
   color: #000;
   display: inline-block;
   transition: 0.5s;
   font-weight: normal;
-}
+}*/
 #h_nav ul li:hover {
   color: #FFF;
   background-color: #000;
   border-radius: 5px;
 }
 
+/* Sign in link */
+#sign_in_link {
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
 /* Accueil Article Style */
 aside {
   display: none;
 }
+
 #s_post {
   padding: 2rem;
 }
@@ -91,7 +103,7 @@ aside {
 #s_comms {
   padding: 2rem;
 }
-#s_comms h2 {
+#s_comms h2, #sign_in h2 {
   text-align: center;
   font-weight: normal;
   padding: 1rem;
@@ -133,36 +145,42 @@ aside {
 }
 
 /* Connexion Page Style */
-#connexion main h2 {
+form#log_in {
+  margin-bottom: 4rem;
+}
+#connexion #log_in h2 {
   text-align: center;
   font-weight: normal;
   font-size: 5em;
-  margin-bottom: 7rem;
+  margin-bottom: 4rem;
   padding: 1rem;
   border: 2px solid #000;
 }
 
-#connexion main fieldset {
+#connexion #log_in fieldset, #inscription #sign_in fieldset {
   width: 75%;
   margin: 0 auto;
   border: 2px solid #000;
   padding: 3rem;
 }
-#connexion main ul li:not(:last-child) {
+#connexion #log_in ul li:not(:last-child), #inscription #sign_in ul li:not(:last-child) {
   text-align: center;
   display: grid;
   grid-template-columns: 0.4fr 0.6fr;
   margin-bottom: 2rem;
 }
-#connexion main li * {
+#connexion #log_in li *, #inscription #sign_in li * {
   font-size: 3em;
   width: 100%;
 }
-#connexion main li:last-child {
+#connexion #log_in li:last-child, #inscription #sign_in li:last-child {
   text-align: center;
 }
-#connexion main button {
+#connexion #log_in button {
   width: 50%;
+}
+input[type='file'] {
+  color: transparent;
 }
 
 /* New Billet Page Style */
@@ -204,6 +222,9 @@ aside {
   border: 2px solid #000;
 }
 
+
+
+/* Desktop */
 @media SCREEN and (min-width: 1024px) {
   h1 {
     font-size: 4em;
@@ -234,32 +255,31 @@ aside {
     font-weight: normal;
   }
 
-  #accueil #articles {
+  #articles, #s_post {
     width: 70%;
-    padding: 2rem;
+    padding: 0 2rem;
     display: inline-block;
   }
 
   aside {
-    background-color: #000;
     display: inline-block;
     width: 30%;
     padding: 2rem;
-    color: #fff;
-    max-height: 100%;
     vertical-align: top;
+    background-color: #000;
+    color: #fff;
   }
 
-  #connexion main h2 {
+  #connexion #log_in h2,  #inscription #sign_in h2 {
     font-size: 3em;
   }
-  #connexion main fieldset {
+  #connexion #log_in fieldset {
     width: 70%;
     margin: 0 auto;
     border: 2px solid #000;
     padding: 2rem;
   }
-  #connexion main li * {
+  #connexion #log_in li *, #inscription #sign_in li * {
     font-size: 2em;
   }
   #post main section {

@@ -17,18 +17,27 @@
   <body id="connexion">
 
     <main>
-      <h2>Connexion au Blog</h2>
-      <form action="index.php" method="post">
+      <form id="log_in" action="index.php" method="post">
+        <h2>Connexion au Blog</h2>
         <fieldset>
           <ul>
-            <li><label>Identifiants</label>
-            <input type="text" name="pseudo"></li>
-            <li><label>Mot de passe</label>
-            <input type="password" name="pw"></li>
-            <li><button type="submit" name="button">Valider</button></li>
+            <li>
+              <label>Identifiants</label>
+              <input type="text" name="pseudo">
+            </li>
+            <li>
+              <label>Mot de passe</label>
+              <input type="password" name="pw">
+            </li>
+            <li>
+              <button type="submit" name="button">Valider</button>
+            </li>
           </ul>
         </fieldset>
       </form>
+      <div id="sign_in_link">
+        <h2><a href="sign-in.php">Pas encore inscrit? Cliquez ICI !</a></h2>
+      </div>
     </main>
   </body>
 </html>
