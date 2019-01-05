@@ -98,9 +98,20 @@ aside {
   margin-bottom: 2rem;
 }
 
-
+/* Show Commentaires */
+#show_comms {
+  text-align: center;
+  font-size: 1.5em;
+}
+#show_comms button {
+  font-size: 1.5em;
+}
+#show_comms p {
+  margin-bottom: 1rem;
+}
 /* Post Commentaires */
 #s_comms {
+  display: none;
   padding: 2rem;
 }
 #s_comms h2, #sign_in h2 {
@@ -231,7 +242,7 @@ input[type='file'] {
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 3em;
   }
 
   h3:not(.comm div h3) {
@@ -258,11 +269,23 @@ input[type='file'] {
   #articles, #s_post {
     width: 70%;
     padding: 0 2rem;
+  }
+  #accueil .art div {
+    font-size: 0.7em;
+  }
+  .art div h3 {
+    font-weight: normal;
+  }
+
+  #articles, #s_post, aside {
     display: inline-block;
   }
 
+  #post main section {
+    width: 70%;
+  }
+
   aside {
-    display: inline-block;
     width: 30%;
     padding: 2rem;
     vertical-align: top;
@@ -282,9 +305,9 @@ input[type='file'] {
   #connexion #log_in li *, #inscription #sign_in li * {
     font-size: 2em;
   }
-  #post main section {
+
+  #show_comms {
     width: 70%;
-    display: inline-block;
   }
 
 }

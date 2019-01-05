@@ -26,6 +26,10 @@
       --><aside>
 
       </aside>
+      <div id="show_comms">
+        <p>Afficher les Commentaires</p>
+        <button type="button" name="button">Afficher</button>
+      </div>
       <section id="s_comms">
         <h2>nb_comms sur "titre_post"</h2>
 

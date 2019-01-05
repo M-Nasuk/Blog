@@ -7,10 +7,14 @@ for (let i = 0; i < 5; i++) {
   getData('./src/post-desc.php', htmlP);
 }
 
-getData('./post.php', appendPost);
+getData('./src/post.php', appendPost);
 
 for (let i = 0; i < 3; i++) {
   getData('./src/comms.php', appendComms);
 }
 
 })
+
+$('#show_comms button').on('click', function () {
+  $('#s_comms').css('display', 'block');
+});
