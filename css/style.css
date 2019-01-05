@@ -26,11 +26,14 @@ h3 {
 p {
   font-size: 2.5em;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
-
+li {
+  list-style-type: none;
+}
 
 /* HEADER Style*/
 #header {
@@ -40,19 +43,17 @@ a {
 #h_nav {
   margin-bottom: 6rem;
 }
-#h_nav ul li:not(:last-child) {
+#h_nav ul li {
   margin-bottom: 1rem;
 }
-#h_nav ul li, #new_billet form ul li {
-  list-style-type: none;
-}
-#h_nav a h2 {
+
+#h_nav ul li {
   color: #000;
   display: inline-block;
   transition: 0.5s;
   font-weight: normal;
 }
-#h_nav a h2:hover {
+#h_nav ul li:hover {
   color: #FFF;
   background-color: #000;
   border-radius: 5px;
@@ -60,6 +61,9 @@ a {
 
 
 /* Accueil Article Style */
+aside {
+  display: none;
+}
 #s_post {
   padding: 2rem;
 }
@@ -85,7 +89,7 @@ a {
 
 /* Post Commentaires */
 #s_comms {
-  padding: 3rem;
+  padding: 2rem;
 }
 #s_comms h2 {
   text-align: center;
@@ -96,6 +100,7 @@ a {
 }
 .comm {
   margin-bottom: 3rem;
+  padding: 1rem;
 }
 .comm > * {
   margin-bottom: 1rem;
@@ -116,12 +121,48 @@ a {
   margin: 0.5rem;
   margin-left: 0;
 }
+.comm p {
+  font-size: 2em;
+}
 .comm div p {
   display: inline-block;
   font-size: 2em;
 }
 .comm p:last-child {
   text-align: right;
+}
+
+/* Connexion Page Style */
+#connexion main h2 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 5em;
+  margin-bottom: 7rem;
+  padding: 1rem;
+  border: 2px solid #000;
+}
+
+#connexion main fieldset {
+  width: 75%;
+  margin: 0 auto;
+  border: 2px solid #000;
+  padding: 3rem;
+}
+#connexion main ul li:not(:last-child) {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  margin-bottom: 2rem;
+}
+#connexion main li * {
+  font-size: 3em;
+  width: 100%;
+}
+#connexion main li:last-child {
+  text-align: center;
+}
+#connexion main button {
+  width: 50%;
 }
 
 /* New Billet Page Style */
@@ -161,4 +202,69 @@ a {
 }
 #new_billet input[name='title'], textarea {
   border: 2px solid #000;
+}
+
+@media SCREEN and (min-width: 1024px) {
+  h1 {
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3:not(.comm div h3) {
+    font-size: 1em;
+  }
+
+  p, .comm p, .comm div p {
+    font-size: 1.5em;
+  }
+
+  #h_nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #h_nav ul li {
+    margin-bottom: 0rem;
+    width: 100%;
+  }
+  #h_nav ul li h2 {
+    font-weight: normal;
+  }
+
+  #accueil #articles {
+    width: 70%;
+    padding: 2rem;
+    display: inline-block;
+  }
+
+  aside {
+    background-color: #000;
+    display: inline-block;
+    width: 30%;
+    padding: 2rem;
+    color: #fff;
+    max-height: 100%;
+    vertical-align: top;
+  }
+
+  #connexion main h2 {
+    font-size: 3em;
+  }
+  #connexion main fieldset {
+    width: 70%;
+    margin: 0 auto;
+    border: 2px solid #000;
+    padding: 2rem;
+  }
+  #connexion main li * {
+    font-size: 2em;
+  }
+  #post main section {
+    width: 70%;
+    display: inline-block;
+  }
+
 }

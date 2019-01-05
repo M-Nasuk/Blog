@@ -12,21 +12,23 @@
     <script type="text/javascript" src="js/utilities.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <title>Post</title>
+    <title>Connexion</title>
   </head>
-  <body id="post">
+  <body id="connexion">
 
     <main>
-      <section id="s_post">
-
-      </section><!--
-      --><aside>
-
-      </aside>
-      <section id="s_comms">
-        <h2>nb_comms sur "titre_post"</h2>
-
-      </section>
+      <h2>Connexion au Blog</h2>
+      <form action="index.php" method="post">
+        <fieldset>
+          <ul>
+            <li><label>Identifiants</label>
+            <input type="text" name="pseudo"></li>
+            <li><label>Mot de passe</label>
+            <input type="password" name="pw"></li>
+            <li><button type="submit" name="button">Valider</button></li>
+          </ul>
+        </fieldset>
+      </form>
     </main>
   </body>
 </html>

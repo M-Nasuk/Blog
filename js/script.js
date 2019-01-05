@@ -9,9 +9,9 @@ function prependBody(response)
   $('body').prepend(response);
 }
 
-function appendMain(response)
+function appendArticles(response)
 {
-  $('#accueil main').append(response);
+  $('#accueil #articles').append(response);
 }
 
 function htmlP(response)
