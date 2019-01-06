@@ -5,7 +5,7 @@
       <ul>
         <li>
           <label>Commentaires</label>
-          <textarea name="ta_comm" rows="6" cols="40"></textarea>
+          <textarea name="ta_comm" rows="5" cols="40"></textarea>
         </li>
         <li>
           <label>Pseudo</label>

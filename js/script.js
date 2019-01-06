@@ -28,31 +28,22 @@ function appendFormComm(response)
   $('#add_comm').after(response);
 }
 
-function appendFormAnswer(response)
-{
-  $('.comm .d_button button').after(response);
+function displayForm(event){
+  $(`.comm#${event.target.id} .d_button > div`).toggleClass('hide');
+  $(`.comm:not(.comm#${event.target.id}) .d_button > div`).addClass('hide');
 }
 
-
-function displayAnswerForm(event)
-{
-  if (event.target.id == $('.d_button div')[event.target.id].id){
-    $(`.d_button div#${event.target.id}`).toggleClass('selected');
-  }
-  $(`.d_button div:not(#${event.target.id})`).addClass('selected');
-}
 
 function idDiv()
 {
-  let x = 0;
-  for (let i of document.querySelectorAll('.d_button div')){
-    i.dataset.index = x;
-    i.id = x;
-    x++;
+  let w = 0;
+  for (let i of document.querySelectorAll('.comm')){
+    i.id = w;
+    w++;
   }
+  
   let y = 0;
   for (let i of document.querySelectorAll('.comm .d_button .answer')) {
-    i.dataset.index = y;
     i.id = y;
     y++;
   }

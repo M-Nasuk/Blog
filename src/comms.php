@@ -20,7 +20,7 @@
           <ul>
             <li>
               <label>Commentaires</label>
-              <textarea name="ta_comm" rows="6" cols="80"></textarea>
+              <textarea name="ta_comm" rows="4" cols="40"></textarea>
             </li>
             <li>
               <label>Pseudo</label>

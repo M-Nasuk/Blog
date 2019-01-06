@@ -21,12 +21,18 @@ $('#add_comm').on('click', function(){
 });
 
 
-$('#show_comms button').on('click', function() {show(); idDiv();});
+$('#show_comms button').on('click', function() {
+  show();
+  idDiv();
+  for (let i = 0; i < $('.comm').length; i++) {
+    $(`button#${i}.answer`).on('click', displayForm);
+  }
+});
 
-for (let i = 0; i < $('.answer').length; i++) {
-  $(`.d_button > button#${i}`).on('click', function() {displayAnswerForm();});
-}
 
 $( "body" ).click(function( event ) {
   console.log(event.target.id )});
+
+
+
 })
