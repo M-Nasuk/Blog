@@ -14,18 +14,21 @@ for (let i = 0; i < 3; i++) {
   getData('./src/comms.php', appendComms);
 }
 
+getData('./src/comm-form.php', appendFormComm);
+$('#add_comm').on('click', function(){
+  $('#s_comms > div').toggleClass('hide');
+});
+
+
+//getData('./src/comm-form.php', appendFormAnswer);
+
+
+
+
+
+
+
 $('#show_comms button').on('click', show);
-
-for (let i = 0; i < $('.answer').length; i++) {
-  $(`.comm > div:last-child button`).on('click', function () {getData('./src/comm-form.php', appendFormAnswer);});
-}
-
-
-
-
-
-
-
 
 
 

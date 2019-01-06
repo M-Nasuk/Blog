@@ -11,7 +11,10 @@
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <div>
-    <button type="button" class="answer" name="button">Repondre</button>
+  <div class="d_button">
+    <button type="button" class="answer" name="button" onclick="displayAnwserForm()">Repondre</button>
+    <script type="text/javascript">
+      getData('./src/comm-form.php', function(){ (response).appendTo($('.answer'));});
+    </script>
   </div>
 </article>

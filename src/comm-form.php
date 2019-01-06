@@ -1,7 +1,7 @@
-<div>
-  <form class="" action="single-post.php" method="post">
+<div class="hide">
+  <form action="single-post.php" method="post">
     <fieldset>
-      <h2>Laisser un commentaire</h2>
+      <h2>Rediger votre commentaire</h2>
       <ul>
         <li>
           <label>Commentaires</label>

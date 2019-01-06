@@ -28,12 +28,11 @@
 
       </aside>
       <div id="show_comms">
-        <p>Afficher les Commentaires</p>
-        <button type="button" name="button">Afficher</button>
+        <button type="button" name="button">Afficher les commentaires</button>
       </div>
       <section id="s_comms" class="hide">
         <h2>nb_comms sur "titre_post"</h2>
-
+        <button id="add_comm" type="button" name="button">Ajouter un commentaire</button>
       </section>
     </main>
   </body>
