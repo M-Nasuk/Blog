@@ -33,9 +33,13 @@ function appendFormAnswer(response)
   $('.comm .d_button button').after(response);
 }
 
-function displayAnswerForm()
+
+function displayAnswerForm(event)
 {
-  $('.comm .d_button div').toggleClass('hide');
+  if (event.target.id == $('.d_button div')[event.target.id].id){
+    $(`.d_button div#${event.target.id}`).toggleClass('selected');
+  }
+  $(`.d_button div:not(#${event.target.id})`).addClass('selected');
 }
 
 function idDiv()
@@ -43,6 +47,13 @@ function idDiv()
   let x = 0;
   for (let i of document.querySelectorAll('.d_button div')){
     i.dataset.index = x;
+    i.id = x;
     x++;
+  }
+  let y = 0;
+  for (let i of document.querySelectorAll('.comm .d_button .answer')) {
+    i.dataset.index = y;
+    i.id = y;
+    y++;
   }
 }

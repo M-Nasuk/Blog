@@ -12,7 +12,7 @@
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <div class="d_button">
-    <button type="button" class="answer" name="button" onclick="displayAnswerForm()">Repondre</button>
+    <button type="button" class="answer" name="button">Repondre</button>
     <div class="hide d_form">
       <form action="single-post.php" method="post">
         <fieldset>
