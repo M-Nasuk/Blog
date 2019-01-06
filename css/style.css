@@ -131,7 +131,7 @@ aside {
   display: none;
 }
 
-#s_comms h2, #sign_in h2 {
+#s_comms > h2, #sign_in h2 {
   text-align: center;
   font-weight: normal;
   padding: 1rem;
@@ -172,6 +172,7 @@ aside {
   display: block;
   margin: auto;
   font-size: 3em;
+  margin-bottom: 2rem;
 }
 .d_button button, .d_form button {
   margin: auto;
@@ -179,13 +180,31 @@ aside {
   display: block;
   font-size: 2em;
 }
+.d_button > button {
+  margin-bottom: 1rem;
+}
 .d_form {
   max-width: 100%;
 }
 .d_form ul li:not(:last-child) {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
+  margin-bottom: 1rem;
+}
+.d_form ul li label {
+  font-size: 2.5em;
+}
+.d_form fieldset h2 {
+  font-size: 3em;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: normal;
+}
+textarea {
   font-size: 2em;
+}
+.d_form fieldset, .d_form input[type='text'] {
+  border: 2px solid #000;
 }
 
 /* Connexion Page Style */
@@ -318,8 +337,9 @@ input[type='file'] {
     display: inline-block;
   }
 
-  #post main section {
+  #post main section:not(#s_post) {
     width: 70%;
+    font-size: 0.85em;
   }
 
   aside {
@@ -347,4 +367,18 @@ input[type='file'] {
     width: 70%;
   }
 
+
+  .d_form fieldset h2 {
+    font-size: 2em;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: normal;
+  }
+  .d_form ul li label {
+    font-size: 1.5em;
+  }
+
+  #show_comms button {
+    font-size: 1.5em;
+}
 }
