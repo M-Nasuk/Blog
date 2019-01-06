@@ -31,7 +31,7 @@ function appendComms(response)
 
 function appendFormAnswer(response)
 {
-  $('.comm').append(response);
+  $('.comm > div:last-child').append(response);
 }
 
 function hide()

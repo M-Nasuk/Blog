@@ -153,7 +153,7 @@ aside {
   display: inline-block;
   font-size: 2em;
 }
-.comm p:last-child {
+.comm > div:last-child {
   text-align: right;
 }
 

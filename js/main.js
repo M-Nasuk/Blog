@@ -11,13 +11,12 @@ getData('./src/post.php', appendPost);
 
 for (let i = 0; i < 3; i++) {
   getData('./src/comms.php', appendComms);
-  $('.answer').attr('id', i);
 }
 
 $('#show_comms button').on('click', show);
 
 for (let i = 0; i < $('.answer').length; i++) {
-  $(`.comm a#${i}`).on('click', appendFormAnswer);
+  $(`.comm > div:last-child button`).on('click', function () {getData('./src/comm-form.php', appendFormAnswer);});
 }
 
 
