@@ -26,7 +26,12 @@ function appendPost(response)
 
 function appendComms(response)
 {
-  $('#post main #s_comms').append(response);
+  $('#s_comms').append(response);
+}
+
+function appendFormAnswer(response)
+{
+  $('.comm').append(response);
 }
 
 function hide()
