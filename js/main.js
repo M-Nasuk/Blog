@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
 getData('./src/header.php', prependBody);
+getData('./src/log.php', prependBody);
 
 for (let i = 0; i < 5; i++) {
   getData('./src/post.php', appendArticles);

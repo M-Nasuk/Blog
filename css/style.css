@@ -36,6 +36,13 @@ li {
   list-style-type: none;
 }
 
+#d_log {
+  display: none;
+}
+
+#check_log:checked + #d_log {
+  display: block;
+}
 
 /* HEADER Style*/
 #header {
