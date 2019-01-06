@@ -13,8 +13,18 @@ for (let i = 0; i < 3; i++) {
   getData('./src/comms.php', appendComms);
 }
 
-})
+$('#show_comms button').on('click', show);
 
-$('#show_comms button').on('click', function () {
-  $('#s_comms').css('display', 'block');
-});
+
+
+
+
+
+
+
+
+
+
+
+
+})

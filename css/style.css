@@ -109,11 +109,13 @@ aside {
 #show_comms p {
   margin-bottom: 1rem;
 }
+
 /* Post Commentaires */
 #s_comms {
-  display: none;
   padding: 2rem;
+  display: none;
 }
+
 #s_comms h2, #sign_in h2 {
   text-align: center;
   font-weight: normal;

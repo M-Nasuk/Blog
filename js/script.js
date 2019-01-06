@@ -28,3 +28,21 @@ function appendComms(response)
 {
   $('#post main #s_comms').append(response);
 }
+
+function hide()
+{
+  $('#s_comms').css('display', 'none');
+  $('#show_comms button').html('Afficher');
+  $('#show_comms p').html('Afficher les commentaires');
+  $('#show_comms button').off();
+  $('#show_comms button').on('click', show);
+}
+
+function show()
+{
+  $('#s_comms').css('display', 'block');
+  $('#show_comms button').html('Cacher');
+  $('#show_comms p').html('Cacher les commentaires');
+  $('#show_comms button').off();
+  $('#show_comms button').on('click', hide);
+};
