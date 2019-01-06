@@ -12,9 +12,26 @@
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <div class="d_button">
-    <button type="button" class="answer" name="button" onclick="displayAnwserForm()">Repondre</button>
-    <script type="text/javascript">
-      getData('./src/comm-form.php', function(){ (response).appendTo($('.answer'));});
-    </script>
+    <button type="button" class="answer" name="button" onclick="displayAnswerForm()">Repondre</button>
+    <div class="hide d_form">
+      <form action="single-post.php" method="post">
+        <fieldset>
+          <h2>Rediger votre commentaire</h2>
+          <ul>
+            <li>
+              <label>Commentaires</label>
+              <textarea name="ta_comm" rows="8" cols="80"></textarea>
+            </li>
+            <li>
+              <label>Pseudo</label>
+              <input type="text" name="pseudo_comm">
+            </li>
+            <li>
+              <button type="submit" name="button">Repondre</button>
+            </li>
+          </ul>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </article>

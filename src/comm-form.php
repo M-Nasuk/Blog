@@ -1,11 +1,11 @@
-<div class="hide">
+<div class="hide d_form">
   <form action="single-post.php" method="post">
     <fieldset>
       <h2>Rediger votre commentaire</h2>
       <ul>
         <li>
           <label>Commentaires</label>
-          <textarea name="ta_comm" rows="8" cols="80"></textarea>
+          <textarea name="ta_comm" rows="8" cols="40"></textarea>
         </li>
         <li>
           <label>Pseudo</label>

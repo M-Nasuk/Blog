@@ -15,21 +15,13 @@ for (let i = 0; i < 3; i++) {
 }
 
 getData('./src/comm-form.php', appendFormComm);
+
 $('#add_comm').on('click', function(){
   $('#s_comms > div').toggleClass('hide');
 });
 
 
-//getData('./src/comm-form.php', appendFormAnswer);
-
-
-
-
-
-
-
-$('#show_comms button').on('click', show);
-
+$('#show_comms button').on('click', function() {show(); idDiv();});
 
 
 

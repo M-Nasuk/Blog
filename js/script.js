@@ -30,10 +30,19 @@ function appendFormComm(response)
 
 function appendFormAnswer(response)
 {
-  $('.comm #d_button').append(response);
+  $('.comm .d_button button').after(response);
 }
 
-function displayAnwserForm()
+function displayAnswerForm()
 {
-  $('.comm #d_button div').toggleClass('hide');
+  $('.comm .d_button div').toggleClass('hide');
+}
+
+function idDiv()
+{
+  let x = 0;
+  for (let i of document.querySelectorAll('.d_button div')){
+    i.dataset.index = x;
+    x++;
+  }
 }

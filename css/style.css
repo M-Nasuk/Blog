@@ -8,7 +8,12 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: #000;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#header, main {
+  background-color: #fff;
 }
 
 h1 {
@@ -51,7 +56,7 @@ li {
 #header {
   color: #000;
   text-align: center;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 #h_nav {
   display: flex;
@@ -114,7 +119,7 @@ aside {
   font-size: 1.5em;
 }
 #show_comms button {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 #show_comms p {
   margin-bottom: 1rem;
@@ -140,7 +145,7 @@ aside {
 .comm > * {
   margin-bottom: 1rem;
 }
-.comm div:after {
+.comm div:first-child:after {
   content: '';
   display: block;
   clear: both;
@@ -163,8 +168,24 @@ aside {
   display: inline-block;
   font-size: 2em;
 }
-.comm > div:last-child {
-  text-align: right;
+#add_comm {
+  display: block;
+  margin: auto;
+  font-size: 3em;
+}
+.d_button button, .d_form button {
+  margin: auto;
+  margin-right: 0;
+  display: block;
+  font-size: 2em;
+}
+.d_form {
+  max-width: 100%;
+}
+.d_form ul li:not(:last-child) {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  font-size: 2em;
 }
 
 /* Connexion Page Style */
@@ -249,6 +270,10 @@ input[type='file'] {
 
 /* Desktop */
 @media SCREEN and (min-width: 1024px) {
+  main {
+    padding: 1rem;
+  }
+
   h1 {
     font-size: 4em;
   }
@@ -280,7 +305,7 @@ input[type='file'] {
 
   #articles, #s_post {
     width: 70%;
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   #accueil .art div {
     font-size: 0.7em;
