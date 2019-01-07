@@ -1,5 +1,6 @@
 <?php
 
+include './src/repository/select.php';
 
 
 
@@ -19,4 +20,8 @@
 
 
 
-include 'blog.html'; ?>
+
+
+include 'template/blog.html';
+
+?>
