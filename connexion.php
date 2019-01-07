@@ -17,7 +17,7 @@
   <body id="connexion">
 
     <main>
-      <form id="log_in" action="index.php" method="post">
+      <form id="log_in" action="connexion.php" method="post">
         <h2>Connexion au Blog</h2>
         <fieldset>
           <ul>
