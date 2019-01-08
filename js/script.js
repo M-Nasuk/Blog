@@ -15,6 +15,11 @@ function appendPost(response)
 }
 */
 
+function appendAside(response)
+{
+  $('aside').append(response);
+}
+
 function appendComms(response)
 {
   $('#s_comms').append(response);

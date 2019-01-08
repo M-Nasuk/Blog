@@ -5,6 +5,7 @@ getData('./src/header.php', prependBody);
 
 getData('./src/posts.php', appendArticles);
 
+getData('./src/aside.php', appendAside);
 //getData('./src/post.php', appendPost);
 
 for (let i = 0; i < 3; i++) {

@@ -1,4 +1,4 @@
-<?php include "./src/repository/select-all.php"; ?>
+<?php include "./repository/select-all.php"; ?>
 
 <h2 style="padding-left: 1rem; font-weight: normal; margin-bottom: 1rem;">Categorie</h3>
 <ul style="padding-left: 2rem;">
