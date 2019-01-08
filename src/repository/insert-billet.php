@@ -25,6 +25,4 @@ $insert_billet->execute([$titre, $corps_texte, $img_blob, $video, $date_pub, $ca
 
 
 header('Location: ../../index.php');
-//include '../../template/test.phtml';
-
  ?>
