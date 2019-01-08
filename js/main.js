@@ -5,8 +5,12 @@ getData('./src/header.php', prependBody);
 
 getData('./src/posts.php', appendArticles);
 
-getData('./src/aside.php', appendAside);
+//  $_GET['id'], Ajax ne fonctionne pas avec $_GET à travers l'url
+//getData('./src/cat-billets.php', appendResult);
 //getData('./src/post.php', appendPost);
+
+getData('./src/aside.php', appendAside);
+
 
 for (let i = 0; i < 3; i++) {
   getData('./src/comms.php', appendComms);

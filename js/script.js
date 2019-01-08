@@ -8,13 +8,18 @@ function appendArticles(response)
   $('#articles').append(response);
 }
 
+
 /*
 function appendPost(response)
 {
   $('#post main #s_post').append(response);
 }
-*/
 
+function appendResult(response)
+{
+  $('#result main > section').append(response);
+}
+*/
 function appendAside(response)
 {
   $('aside').append(response);
