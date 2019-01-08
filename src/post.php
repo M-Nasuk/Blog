@@ -5,7 +5,7 @@
 <?php $date = changeMonth($single_post_result['date_de_publication']); ?>
 
 <article class="art">
-  <img src="src/forest.jpg" alt="img_post_forest">
+  <img src="public/images/<?= $single_post_result['titre'].'.jpeg'; ?>" alt="img_post_forest">
   <h2><?= $single_post_result['titre']; ?></h2>
   <div>
     <h3><?= str_replace($date[0], $date[1], date('d F y H:i',strtotime($single_post_result['date_de_publication']))); ?> | </h3>

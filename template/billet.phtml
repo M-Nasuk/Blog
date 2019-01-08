@@ -1,4 +1,5 @@
 <?php include './src/repository/select-all.php'; ?>
+<?php date_default_timezone_set('Europe/Paris'); ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -17,10 +18,9 @@
     <title>Nouveau Billet</title>
   </head>
   <body id="new_billet">
-
     <main>
       <h1>Nouveau Billet</h1>
-      <form class="" action="./src/repository/insert-billet.php" method="post" enctype="multipart/form-data">
+      <form action="./src/repository/insert-billet.php" method="post" enctype="multipart/form-data">
         <fieldset>
           <ul>
             <li>
@@ -30,6 +30,7 @@
             <li>
               <label for="categorie">Theme :</label>
               <select name="categorie">
+                <option value="none">Choisissez une categorie</option>
                 <?php foreach ($cat_results as $cat_index): ?>
                   <option value="<?= $cat_index['id_categorie']; ?>"><?= $cat_index['nom']; ?></option>
                 <?php endforeach; ?>
@@ -43,9 +44,11 @@
               <label for="image">Image :</label>
               <input type="file" name="img" accept="image/*">
             </li>
+            <input type="hidden" name="author" value="<?= $posts_results[0]['author']; ?>">
+            <input type="hidden" name="datetime" value="<?= date('Y-m-d H:i:s');  ?>">
             <li>
               <label for="save">Enregistrer votre billet ?</label>
-              <button type="button" value="send">Valider</button>
+              <button type="submit" value="send">Valider</button>
             </li>
           </ul>
         </fieldset>

@@ -96,6 +96,7 @@ aside {
 }
 .art {
   margin-bottom: 3rem;
+  padding: 0.5rem;
 }
 .art img {
   max-width: 100%;
@@ -201,7 +202,7 @@ aside {
   font-weight: normal;
 }
 textarea {
-  font-size: 2em;
+  font-size: 1em;
 }
 .d_form fieldset, .d_form input[type='text'] {
   border: 2px solid #000;
@@ -322,7 +323,7 @@ input[type='file'] {
     font-weight: normal;
   }
 
-  #articles, #s_post {
+  #articles, #s_post, #show_comms, #test {
     width: 70%;
     padding: 0 1rem;
   }
@@ -333,7 +334,7 @@ input[type='file'] {
     font-weight: normal;
   }
 
-  #articles, #s_post, aside {
+  #articles, #s_post, aside, #test {
     display: inline-block;
   }
 
@@ -363,10 +364,6 @@ input[type='file'] {
     font-size: 2em;
   }
 
-  #show_comms {
-    width: 70%;
-  }
-
 
   .d_form fieldset h2 {
     font-size: 2em;
@@ -380,5 +377,8 @@ input[type='file'] {
 
   #show_comms button {
     font-size: 1.5em;
-}
+  }
+  #test {
+    background-color: #fff;
+  }
 }
