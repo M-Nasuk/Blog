@@ -1,10 +1,8 @@
 <?php include "./src/repository/select-all.php"; ?>
 
-<p>Test</p>
-
-<h3 style="padding-left: 1rem; font-weight: normal;">Categorie</h3>
-<ul>
+<h2 style="padding-left: 1rem; font-weight: normal; margin-bottom: 1rem;">Categorie</h3>
+<ul style="padding-left: 2rem;">
   <?php foreach ($cat_results as $cat_index): ?>
-    <li><?= $cat_index['nom']; ?></li>
+    <li style="margin-bottom: 0.5rem;"><h3 style="font-weight: normal;"><a href=""><?= $cat_index['nom']; ?></a></h3></li>
   <?php endforeach; ?>
 </ul>
