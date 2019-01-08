@@ -15,16 +15,22 @@
     <title>Update Billet</title>
   </head>
   <body>
-    <form action="./test.php" method="post" enctype="multipart/form-data">
-      <input type="file" name="test" accept="image/*">
-      <input type="number" name="id">
-      <button type="submit" name="button">Envoyer</button>
-    </form>
-    <section id="test">
-      <p>test</p>
-    </section><!--
-    --><aside>
-      <?php include './src/aside.php'; ?>
-    </aside>
+    <main>
+      <?php echo var_dump($_FILES);
+      echo var_dump($_POST);  ?>
+
+      <form action="./update.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="test" accept="image/*">
+        <input type="number" name="id">
+        <button type="submit" name="button">Envoyer</button>
+      </form>
+      <section id="test">
+        <p>test</p>
+      </section><!--
+      --><aside>
+        <?php include './src/aside.php'; ?>
+      </aside>
+    </main>
+
   </body>
 </html>
