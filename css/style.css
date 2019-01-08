@@ -323,19 +323,16 @@ input[type='file'] {
     font-weight: normal;
   }
 
-  #articles, #s_post, #show_comms, #test {
+  #articles, #s_post, #show_comms, #test, #result main > section {
     width: 70%;
     padding: 0 1rem;
+    display: inline-block;
   }
   #accueil .art div {
     font-size: 0.7em;
   }
   .art div h3 {
     font-weight: normal;
-  }
-
-  #articles, #s_post, aside, #test {
-    display: inline-block;
   }
 
   #post main section:not(#s_post) {
@@ -349,6 +346,7 @@ input[type='file'] {
     vertical-align: top;
     background-color: #000;
     color: #fff;
+    display: inline-block;
   }
 
   #connexion #log_in h2,  #inscription #sign_in h2 {

@@ -1,4 +1,4 @@
-<?php include "./src/repository/select-single-post.php"; ?>
+<?php include "./src/repository/select-single.php"; ?>
 <?php include "./src/utilities.php"; ?>
 
 
