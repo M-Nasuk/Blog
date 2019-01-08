@@ -2,6 +2,7 @@ $(document).ready(function () {
 
 getData('./src/header.php', prependBody);
 
+getData('./src/inscription.php', prependInscri);
 
 getData('./src/posts.php', appendArticles);
 

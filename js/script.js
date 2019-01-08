@@ -8,7 +8,10 @@ function appendArticles(response)
   $('#articles').append(response);
 }
 
-
+function prependInscri(response)
+{
+  $('main:not(#sign)').prepend(response);
+}
 /*
 function appendPost(response)
 {
