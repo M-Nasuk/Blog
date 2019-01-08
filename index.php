@@ -1,7 +1,7 @@
 <?php
 
-include './src/repository/select.php';
+include './src/repository/select-all.php';
 
-include 'template/blog.html';
+include 'template/blog.phtml';
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-include "./repository/select.php";
+include "./repository/select-all.php";
 
 /*  Log CSS style
 #d_log {
@@ -22,5 +22,6 @@ include "./repository/select.php";
     <p><?= var_dump($cat_results);?></p>
     <p><?= var_dump($cat_results[0]['nom']);?></p>
     <p><?= var_dump($_POST); ?></p>
+    <p><?= var_dump($_GET);?></p>
   </div>
 </section>

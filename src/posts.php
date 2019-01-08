@@ -1,4 +1,4 @@
-<?php include "./repository/select.php"; ?>
+<?php include "./repository/select-all.php"; ?>
 <?php include "./utilities.php"; ?>
 
 <?php foreach ($posts_results as $result_id): ?>
