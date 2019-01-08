@@ -96,6 +96,7 @@ aside {
 }
 .art {
   margin-bottom: 3rem;
+  padding: 0.5rem;
 }
 .art img {
   max-width: 100%;
@@ -201,7 +202,7 @@ aside {
   font-weight: normal;
 }
 textarea {
-  font-size: 2em;
+  font-size: 1em;
 }
 .d_form fieldset, .d_form input[type='text'] {
   border: 2px solid #000;
