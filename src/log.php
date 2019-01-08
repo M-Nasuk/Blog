@@ -19,6 +19,8 @@ include "./repository/select.php";
   <input type="checkbox" name="check_log" id="check_log">
   <div id="d_log">
     <p style="text-align: center;">Log</p>
-    <p><?= var_dump($posts_results);?></p>
+    <p><?= var_dump($cat_results);?></p>
+    <p><?= var_dump($cat_results[0]['nom']);?></p>
+    <p><?= var_dump($_POST); ?></p>
   </div>
 </section>

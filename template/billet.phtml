@@ -1,3 +1,5 @@
+<?php include './src/repository/select.php'; ?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -28,7 +30,9 @@
             <li>
               <label for="categorie">Theme :</label>
               <select name="categorie">
-                <option value="null">Choisissez une categorie</option>
+                <?php foreach ($cat_results as $cat_index): ?>
+                  <option value="<?= $cat_index['id_categorie']; ?>"><?= $cat_index['nom']; ?></option>
+                <?php endforeach; ?>
               </select>
             </li>
             <li>

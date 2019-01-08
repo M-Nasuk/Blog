@@ -14,5 +14,13 @@ $posts_view = $channel->prepare
 $posts_view->execute();
 $posts_results = $posts_view->fetchAll(PDO::FETCH_ASSOC);
 
+$cat_view = $channel->prepare
+(
+  'SELECT *
+  FROM categorie;
+');
+
+$cat_view->execute();
+$cat_results = $cat_view->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
