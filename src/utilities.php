@@ -1,8 +1,5 @@
 <?php
 
-$channel = new PDO('mysql:dbname=blog;host=localhost;','admin','Chocol@t&4');
-
-
 
 CONST MOIS = [
   'January'=> 'Janvier',
@@ -28,20 +25,4 @@ function changeMonth($a)
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- ?>
+?>

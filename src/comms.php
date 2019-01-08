@@ -29,6 +29,7 @@
             <li>
               <button type="submit" name="button">Repondre</button>
             </li>
+            <input type="hidden" id="postId" name="postId" value="id_comm">
           </ul>
         </fieldset>
       </form>

@@ -20,11 +20,5 @@ include "./repository/select.php";
   <div id="d_log">
     <p style="text-align: center;">Log</p>
     <p><?= var_dump($posts_results);?></p>
-    <p><?= var_dump($posts_results)[0];?></p>
-    <p><?= var_dump($posts_results[0]['titre']);?></p>
-    <p><?= var_dump(date('d F y H:i',strtotime($posts_results[0]['date_de_publication'])));?></p>
-    <p><?= changeMonth($posts_results[0]['date_de_publication']);?></p>
-    <p><?php $date = changeMonth($posts_results[0]['date_de_publication']); echo var_dump($date[0]);?></p>
-    <p><?= var_dump(str_replace($date[0], $date[1], date('d F y H:i',strtotime($posts_results[0]['date_de_publication']))));?></p>
   </div>
 </section>

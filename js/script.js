@@ -5,18 +5,15 @@ function prependBody(response)
 
 function appendArticles(response)
 {
-  $('#accueil #articles').append(response);
+  $('#articles').append(response);
 }
 
-function htmlP(response)
-{
-  $('#accueil .art p').html(response);
-}
-
+/*
 function appendPost(response)
 {
   $('#post main #s_post').append(response);
 }
+*/
 
 function appendComms(response)
 {
@@ -41,7 +38,7 @@ function idDiv()
     i.id = w;
     w++;
   }
-  
+
   let y = 0;
   for (let i of document.querySelectorAll('.comm .d_button .answer')) {
     i.id = y;

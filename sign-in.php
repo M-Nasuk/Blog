@@ -17,7 +17,7 @@
   <body id="inscription">
 
     <main>
-      <form id="sign_in" action="sign-in.php" method="post">
+      <form id="sign_in" action="sign-in.php" method="post" enctype="multipart/form-data">
         <h2>Inscription</h2>
         <fieldset>
           <ul>

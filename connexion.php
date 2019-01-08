@@ -1,23 +1,5 @@
 <?php
 
+include 'template/log-in.phtml';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-include 'template/log-in.phtml'; ?>
+?>

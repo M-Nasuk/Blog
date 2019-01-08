@@ -22,7 +22,7 @@
         <h2><a href="sign-in.php">Pas encore inscrit? Cliquez ICI !</a></h2>
       </div>
       <section id="s_post">
-
+        <?php include 'src/post.php'; ?>
       </section><!--
       --><aside>
 

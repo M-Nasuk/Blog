@@ -18,7 +18,7 @@
 
     <main>
       <h1>Nouveau Billet</h1>
-      <form class="" action="billet.php" method="post">
+      <form class="" action="billet.php" method="post" enctype="multipart/form-data">
         <fieldset>
           <ul>
             <li>

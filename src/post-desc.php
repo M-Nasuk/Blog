@@ -1,3 +1,0 @@
-<?php include "./repository/select.php"; ?>
-
-<?= substr($posts_results[0]['corps_de_texte'], 0, 100);?>...
