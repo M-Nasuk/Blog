@@ -20,17 +20,19 @@ $update_img->execute([$var, $id]);
 
 
 $pseudo = $_POST['pseudo'];
-$pw = password_hash($_POST['pwd'], PASSWORD_DEFAULT);;
+$mail = $_POST['pwd'];
+$pw = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 $champ = $_POST['champ'];
+$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
 
 $update_pwd = $channel->prepare
 (
   'UPDATE utilisateur
-  SET ? = ?
+  SET mot_de_passe = ?
   WHERE pseudo = ?;
 ');
 
-$update_pwd->execute([$champ, $pw, $pseudo]);
+$update_pwd->execute([$pw, $pseudo]);
 
 //$_POST = null;
 

@@ -17,14 +17,16 @@
   <body>
     <main>
       <section style="display: inline-block; width: 70%;">
+        
         <p>post</p>
         <?php foreach ($_POST as $key):?>
           <p><?= var_dump($key); ?></p>
         <?php endforeach; ?>
-        <p>data</p>
+        <!--<p>data</p>
+        <p><?= var_dump($user_result); ?></p>
         <?php foreach ($user_result as $key):?>
           <p><?= var_dump($key); ?></p>
-        <?php endforeach; ?>
+        <?php endforeach; ?>-->
       </section><!--
       --><aside>
 

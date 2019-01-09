@@ -29,9 +29,11 @@
             Champ: : <input type="text" name="champ">
             Pseudo : <input type="text" name="pseudo">
             Password : <input type="text" name="pwd">
+            Image :<input type="file" name="avatar" accept="image/*">
             <button type="submit" name="button">Envoyer</button>
           </form>
         </div>
+        <p><?php echo var_dump($_POST); ?></p>
         <?php foreach ($_POST as $key):?>
           <p><?= var_dump($key); ?></p>
         <?php endforeach; ?>

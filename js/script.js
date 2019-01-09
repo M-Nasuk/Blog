@@ -10,7 +10,7 @@ function appendArticles(response)
 
 function prependInscri(response)
 {
-  $('main:not(#sign)').prepend(response);
+  $('main:not(.no_signin_link').prepend(response);
 }
 /*
 function appendPost(response)
