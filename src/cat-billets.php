@@ -1,7 +1,9 @@
 <?php include "./src/repository/select-single.php"; ?>
 <?php include "./src/utilities.php"; ?>
 
-
+<h2 style="text-align: center; font-weight: normal; font-size: 5em; margin: 0 2rem 4rem 2rem; padding: 1rem; border: 2px solid #000;">
+  <?= $single_cat_billets_result[0]['nom']; ?>
+</h2>
 <?php foreach ($single_cat_billets_result as $billet_cat): ?>
   <?php $date = changeMonth($billet_cat['date_de_publication']); ?>
   <article class="art">
