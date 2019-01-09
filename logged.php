@@ -2,5 +2,7 @@
 
 include 'template/logged.phtml';
 
-header('Refresh: 2; url=index.php');
+
+header("Refresh: 3; url=index.php");
+
  ?>
