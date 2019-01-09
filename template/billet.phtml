@@ -25,7 +25,7 @@
           <ul>
             <li>
               <label for="titre">Titre :</label>
-              <input type="text" name="title">
+              <input type="text" name="title" required>
             </li>
             <li>
               <label for="categorie">Theme :</label>
@@ -38,11 +38,11 @@
             </li>
             <li>
               <label for="description">Sujet :</label>
-              <textarea name="subject" rows="8" cols="80"></textarea>
+              <textarea name="subject" rows="8" cols="80" required></textarea>
             </li>
             <li>
               <label for="image">Image :</label>
-              <input type="file" name="img" accept="image/*">
+              <input type="file" name="img" accept="image/*" required>
             </li>
             <input type="hidden" name="author" value="<?= $posts_results[0]['author']; ?>">
             <input type="hidden" name="datetime" value="<?= date('Y-m-d H:i:s');  ?>">
