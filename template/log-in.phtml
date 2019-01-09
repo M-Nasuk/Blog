@@ -17,17 +17,17 @@
   <body id="connexion">
 
     <main>
-      <form id="log_in" action="src/repository/connexion.php" method="post">
+      <form id="log_in" action="src/repository/connect.php" method="post">
         <h2>Connexion au Blog</h2>
         <fieldset>
           <ul>
             <li>
-              <label>Identifiants</label>
-              <input type="text" name="pseudo">
+              <label>Pseudo</label>
+              <input type="text" name="pseudo" required>
             </li>
             <li>
               <label>Mot de passe</label>
-              <input type="password" name="pw">
+              <input type="password" name="pwd" autocomplete="new-password" required>
             </li>
             <li>
               <button type="submit" name="button">Valider</button>

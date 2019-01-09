@@ -3,24 +3,32 @@ include 'db.php';
 
 $titre = $_POST['title'];
 $corps_texte = $_POST['subject'];
-$date_pub = $_POST['datetime'];
 $img_blob = addslashes(file_get_contents($_FILES['img']['tmp_name']));
 $video = null;
+$date_pub = $_POST['datetime'];
 $categorie = $_POST['categorie'];
 $author = $_POST['author'];
 
-
+$data_billet = [
+  'title' => $titre,
+  'subject' => $corps_texte,
+  'img' => $img_blob,
+  'video' => $video,
+  'datepost' => $date_pub,
+  'cat' => $categorie,
+  'auteur' => $author
+];
 
 $insert_billet = $channel->prepare
 (
   'INSERT INTO billet (titre, corps_de_texte, image, video, date_de_publication, categorie, author)
-  VALUES (?, ?, ?, ?, ?, ?, ?);
+  VALUES (:title, :subject, :img, :video, :datepost, :cat, :auteur);
 ');
 
 
 
 
-$insert_billet->execute([$titre, $corps_texte, $img_blob, $video, $date_pub, $categorie, $author]);
+$insert_billet->execute($data_billet);
 
 
 

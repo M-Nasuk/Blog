@@ -1,6 +1,5 @@
 <?php
 
-include "./repository/select-all.php";
 //include "./src/repository/insert-billet.php";
 /*  Log CSS style
 #d_log {
@@ -19,11 +18,11 @@ include "./repository/select-all.php";
   <input type="checkbox" name="check_log" id="check_log">
   <div id="d_log">
     <p style="text-align: center;">Log</p>
-
+    <p>post</p>
     <p><?= var_dump($_POST); ?></p>
-    <p><?= var_dump($_GET);?></p>
-    <p><?= var_dump($_FILES['img']['tmp_name']);?></p>
-    <p><?= var_dump(addslashes(file_get_contents($_FILES['img']['tmp_name'])));?></p>
-    
+    <?php foreach ($_POST as $key):?>
+      <p><?= var_dump($key); ?></p>
+    <?php endforeach; ?>
+
   </div>
 </section>

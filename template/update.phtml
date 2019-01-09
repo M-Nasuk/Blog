@@ -12,19 +12,32 @@
     <script type="text/javascript" src="js/utilities.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-    <title>Update Billet</title>
+    <title>Update</title>
   </head>
   <body>
     <main>
-      <form action="./update.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="test" accept="image/*">
-        <input type="number" name="id">
-        <button type="submit" name="button">Envoyer</button>
-      </form>
       <section id="test">
+        <div style="margin-bottom: 4rem;">
+          <form action="./update.php" method="post" enctype="multipart/form-data">
+            Image :<input type="file" name="test" accept="image/*">
+            Id billet :<input type="number" name="id">
+            <button type="submit" name="button">Envoyer</button>
+          </form>
+        </div>
+        <div>
+          <form action="./update.php" method="post" enctype="multipart/form-data">
+            Champ: : <input type="text" name="champ">
+            Pseudo : <input type="text" name="pseudo">
+            Password : <input type="text" name="pwd">
+            <button type="submit" name="button">Envoyer</button>
+          </form>
+        </div>
+        <?php foreach ($_POST as $key):?>
+          <p><?= var_dump($key); ?></p>
+        <?php endforeach; ?>
       </section><!--
       --><aside>
-        <?php include './src/aside.php'; ?>
+
       </aside>
     </main>
 

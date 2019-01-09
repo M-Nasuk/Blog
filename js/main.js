@@ -36,7 +36,6 @@ $('#show_comms button').on('click', function() {
 $( "body" ).click(function( event ) {
   console.log(event.target.id )});
 
-
-getData('./src/log.php', prependBody);
+//getData('./src/log.php', prependBody);
 
 })
