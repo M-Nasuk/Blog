@@ -3,6 +3,11 @@ function prependBody(response)
   $('body').prepend(response);
 }
 
+function prependBodyLog(response)
+{
+  $('#blog_logged)').prepend(response);
+}
+
 function appendArticles(response)
 {
   $('#articles').append(response);

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -15,13 +16,22 @@
     <title>Test</title>
   </head>
   <body>
+
     <main>
       <section style="display: inline-block; width: 70%;">
-        
+
         <p>post</p>
         <?php foreach ($_POST as $key):?>
           <p><?= var_dump($key); ?></p>
         <?php endforeach; ?>
+        <p>session</p>
+        <!--<p><?= var_dump($_SESSION); ?></p>-->
+        <p><?= var_dump($_SESSION['user_data']['pseudo']); ?></p>
+        <?php if ($_SESSION): ?>
+          <p><?php echo 'Oui'; ?></p>
+        <?php else: ?>
+          <p><?php echo 'Non'; ?></p>
+        <?php endif; ?>
         <!--<p>data</p>
         <p><?= var_dump($user_result); ?></p>
         <?php foreach ($user_result as $key):?>

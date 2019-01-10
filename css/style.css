@@ -78,12 +78,30 @@ li {
   transition: 0.5s;
   font-weight: normal;
 }*/
-#h_nav ul li:hover {
+#h_nav > ul li:hover, #user_box ul li {
   color: #FFF;
   background-color: #000;
   border-radius: 5px;
 }
 
+#user_box {
+  position: relative;
+}
+#user_box ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+#user_box > a h2:hover , #user_box ul li h2:hover {
+  color: #000;
+  background-color: #FFF;
+  border-radius: 5px;
+}
+#user_box:hover ul {
+  display: flex;
+}
 /* Sign in link */
 #sign_in_link {
   text-align: center;
@@ -299,7 +317,7 @@ input[type='file'] {
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 5em;
   }
 
   h2 {
@@ -314,12 +332,12 @@ input[type='file'] {
     font-size: 1.5em;
   }
 
-  #h_nav ul {
+  #h_nav > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
   }
-  #h_nav ul li {
+  #h_nav > ul li {
     margin-bottom: 0rem;
     width: 100%;
   }

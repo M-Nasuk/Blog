@@ -1,6 +1,7 @@
+<?php session_start(); ?>
 <article class="comm">
   <div>
-    <img src="src/forest.jpg" alt="">
+    <img src="<?= $_SESSION['user_data']['image']; ?>" alt="">
     <h3>nom_auteur</h3>
     <p>dit :</p>
     <div>
@@ -12,7 +13,9 @@
     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <div class="d_button">
-    <button type="button" class="answer" name="button">Repondre</button>
+    <?php if ($_SESSION): ?>
+      <button type="button" class="answer" name="button">Repondre</button>
+    <?php endif; ?>
     <div class="hide d_form">
       <form action="single-post.php" method="post">
         <fieldset>
@@ -26,6 +29,7 @@
               <label>Pseudo</label>
               <input type="text" name="pseudo_comm">
             </li>
+
             <li>
               <button type="submit" name="button">Repondre</button>
             </li>

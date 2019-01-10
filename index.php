@@ -1,9 +1,14 @@
 <?php
-
+session_start();
 include './src/repository/select-all.php';
 
-include 'template/blog.phtml';
-include './src/repository/logged-in.php';
+if (!$_SESSION) {
+  include 'template/blog.phtml';
+} else {
+  include 'template/blog-logged.phtml';
+}
+
+//include './src/repository/logged-in.php';
 
 
 ?>

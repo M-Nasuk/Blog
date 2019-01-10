@@ -1,1 +1,3 @@
-<?php include './template/single-post.phtml'; ?>
+<?php
+session_start();
+include './template/single-post.phtml'; ?>
