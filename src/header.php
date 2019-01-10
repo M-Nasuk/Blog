@@ -10,6 +10,7 @@
       <?php else: ?>
         <li id="user_box">
           <a href="#">
+            <img width="50" height="50 "src="../admin/users/avatars/<?= $_SESSION['user_data']['pseudo'];?>.jpeg" alt="">
             <h2><?php echo $_SESSION['user_data']['pseudo']; ?></h2>
           </a>
           <ul>
