@@ -33,11 +33,12 @@ CREATE TABLE `billet` (
   `author` bigint(11) NOT NULL,
   PRIMARY KEY (`id_billet`),
   UNIQUE KEY `id_billet_UNIQUE` (`id_billet`),
+  UNIQUE KEY `titre_UNIQUE` (`titre`),
   KEY `fk_billet_2_idx` (`categorie`),
   KEY `fk_billet_1_idx` (`author`),
   CONSTRAINT `fk_billet_1` FOREIGN KEY (`author`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_billet_2` FOREIGN KEY (`categorie`) REFERENCES `categorie` (`id_categorie`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ CREATE TABLE `billet` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-08 11:53:25
+-- Dump completed on 2019-01-10 17:37:59

@@ -27,18 +27,18 @@ CREATE TABLE `utilisateur` (
   `nom` varchar(64) DEFAULT NULL COMMENT 'Nom des utilisateurs',
   `prenom` varchar(64) DEFAULT NULL COMMENT 'prenom des utilisateurs',
   `pseudo` varchar(128) NOT NULL COMMENT 'pseudo des utilisateurs, unique par utilisateur',
-  `mot_de_passe` varchar(128) DEFAULT NULL COMMENT 'password des utilisateurs',
+  `mot_de_passe` binary(64) DEFAULT NULL COMMENT 'password des utilisateurs',
   `e_mail` varchar(96) DEFAULT NULL COMMENT 'email des utilisateurs',
-  `telephone` int(20) DEFAULT NULL COMMENT 'numero de telephone des utilisateurs',
-  `role` tinyint(1) NOT NULL COMMENT 'role des utilisateurs:\n	0 - Admin\n	1 - User',
-  `avatar` varchar(64) DEFAULT NULL,
+  `telephone` varchar(64) DEFAULT NULL COMMENT 'numero de telephone des utilisateurs',
+  `role` tinyint(1) NOT NULL COMMENT 'role des utilisateurs:\n	1 - Admin\n	2 - User',
+  `avatar` blob,
   PRIMARY KEY (`id_utilisateur`),
   UNIQUE KEY `pseudo_UNIQUE` (`pseudo`),
   UNIQUE KEY `id_utilisateur_UNIQUE` (`id_utilisateur`),
   UNIQUE KEY `e_mail_UNIQUE` (`e_mail`),
   KEY `fk_utilisateur_1_idx` (`role`),
   CONSTRAINT `fk_utilisateur_1` FOREIGN KEY (`role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ CREATE TABLE `utilisateur` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-08 11:53:25
+-- Dump completed on 2019-01-10 17:37:59

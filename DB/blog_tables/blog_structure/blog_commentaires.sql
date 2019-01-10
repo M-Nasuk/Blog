@@ -27,17 +27,20 @@ CREATE TABLE `commentaires` (
   `author` bigint(11) NOT NULL,
   `date_de_publication` datetime NOT NULL,
   `texte` longtext NOT NULL,
-  `insertion_image` varchar(64) DEFAULT NULL,
+  `insertion_image` blob,
   `valider_comm` tinyint(1) DEFAULT NULL,
-  `reponse_comm` longtext NOT NULL,
+  `reponse_comm` longtext,
   `billet` bigint(11) NOT NULL,
+  `parent` bigint(11) DEFAULT NULL,
   PRIMARY KEY (`id_commentaires`),
   UNIQUE KEY `id_comentaires_UNIQUE` (`id_commentaires`),
-  UNIQUE KEY `author_UNIQUE` (`author`),
-  UNIQUE KEY `billet_UNIQUE` (`billet`),
+  KEY `fk_commentaires_3_idx` (`parent`),
+  KEY `fk_commentaires_1_idx` (`author`),
+  KEY `fk_commentaires_2_idx` (`billet`),
   CONSTRAINT `fk_commentaires_1` FOREIGN KEY (`author`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_commentaires_2` FOREIGN KEY (`billet`) REFERENCES `billet` (`id_billet`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CONSTRAINT `fk_commentaires_2` FOREIGN KEY (`billet`) REFERENCES `billet` (`id_billet`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_commentaires_3` FOREIGN KEY (`parent`) REFERENCES `commentaires` (`id_commentaires`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +52,4 @@ CREATE TABLE `commentaires` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-08 11:53:25
+-- Dump completed on 2019-01-10 17:37:58
