@@ -16,8 +16,9 @@ $insert_comm = $channel->prepare
 $insert_comm->execute([$user, $datetime, $comm, $billet]);
 
 
-//include '../../test.php';
+$url = $_SERVER['HTTP_REFERER'];
 
+header("Refresh:0; url=$url");
 
 
  ?>

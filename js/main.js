@@ -13,9 +13,8 @@ getData('./src/posts.php', appendArticles);
 getData('./src/aside.php', appendAside);
 
 
-for (let i = 0; i < 3; i++) {
-  getData('./src/comms.php', appendComms);
-}
+getData('./src/comms.php', appendComms);
+
 
 getData('./src/comm-form.php', appendFormComm);
 
