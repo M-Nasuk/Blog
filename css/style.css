@@ -224,7 +224,7 @@ aside {
   font-weight: normal;
 }
 textarea {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 .d_form fieldset, .d_form input[type='text'] {
   border: 2px solid #000;

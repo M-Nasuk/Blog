@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 
 $single_post_view = $channel->prepare
@@ -27,5 +28,16 @@ $single_cat_billets = $channel->prepare
 $single_cat_billets->execute([$_GET['id']]);
 $single_cat_billets_result = $single_cat_billets->fetchAll(PDO::FETCH_ASSOC);
 
+$comms_view = $channel->prepare
+(
+  'SELECT *
+  FROM commentaires
+  WHERE billet = ?;
+');
+
+$comms_view->execute([$_SESSION['billet_id']]);
+$comms_results = $comms_view->fetchAll(PDO::FETCH_ASSOC);
+
+$_SESSION['comms'] = $comms_results;
 
  ?>

@@ -23,10 +23,21 @@
         <p>post</p>
         <!--<?php foreach ($_POST as $key => $val):?>
           <p><?= var_dump($key);  var_dump($val); ?></p>
-        <?php endforeach; ?>
-        <p>session</p>-->
-        <!--<p><?= var_dump($_SESSION); ?></p>-->
-
+        <?php endforeach; ?>-->
+        <p>session</p>
+        <?php
+        /*include './src/repository/db.php';
+        $comms_view = $channel->prepare
+        (
+          'SELECT *
+          FROM commentaires
+          WHERE billet = ?;
+        ');
+        $comms_view->execute([$_SESSION['billet_id']]);
+        $comms_results = fetchAll(PDO::FETCH_ASSOC);
+        $_SESSION['comms'] = $comms_results; */?>
+        <p><?= var_dump($_SESSION); ?></p>
+        <p><?= var_dump($_SESSION['comms']); ?></p>
         <p>data</p>
       <!--  <?= var_dump($user_result['avatar']); ?>
         <?php foreach ($user_result as $key => $val):?>

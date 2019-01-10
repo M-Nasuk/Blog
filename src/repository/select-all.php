@@ -23,5 +23,5 @@ $cat_view = $channel->prepare
 
 $cat_view->execute();
 $cat_results = $cat_view->fetchAll(PDO::FETCH_ASSOC);
-
+  
 ?>
