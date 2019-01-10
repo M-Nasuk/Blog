@@ -20,10 +20,6 @@
     <main>
       <section style="display: inline-block; width: 70%;">
 
-        <p>post</p>
-        <!--<?php foreach ($_POST as $key => $val):?>
-          <p><?= var_dump($key);  var_dump($val); ?></p>
-        <?php endforeach; ?>-->
         <p>session</p>
         <?php foreach ($_SESSION as $key => $val):?>
           <p><?= var_dump($key);  var_dump($val); ?></p>

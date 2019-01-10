@@ -1,3 +1,5 @@
 <?php
 
-include './template/sign-in.phtml'; ?>
+include './template/sign-in.phtml';
+
+?>

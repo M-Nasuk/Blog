@@ -1,11 +1,17 @@
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION['user_data'];
+if (!$_SESSION['user_data']) {
+  $_SESSION['test'] = null;
+} else {
+  $_SESSION['test'] = 1;
+} ?>
 <header id="header">
   <h1>Blog</h1>
   <nav id="h_nav">
     <ul>
       <li><a href="index.php"><h2>Accueil</h2></a></li>
       <li><a href="billet.php"><h2>Billets</h2></a></li>
-      <?php if (!$_SESSION): ?>
+      <?php if (!$_SESSION['test']): ?>
         <li><a href="connexion.php"><h2>Connexion</h2></a></li>
       <?php else: ?>
         <li id="user_box">
