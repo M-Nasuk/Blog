@@ -10,13 +10,13 @@
       <?php else: ?>
         <li id="user_box">
           <a href="#">
-            <img width="50" height="50 "src="../admin/users/avatars/<?= $_SESSION['user_data']['pseudo'];?>.jpeg" alt="">
-            <h2><?php echo $_SESSION['user_data']['pseudo']; ?></h2>
+            <img width="50" height="50 "src="public/user/<?= $_SESSION['user_data']['pseudo'];?>.jpeg" alt="">
+            <h2 style="display: inline-block;"><?php echo $_SESSION['user_data']['pseudo']; ?></h2>
           </a>
           <ul>
             <li>
               <a href="log-out.php">
-                <h2>Se Deconnecter</h2>
+                <h2 style="display:inline-block; text-align: center;">Se Deconnecter</h2>
               </a>
             </li>
           </ul>
