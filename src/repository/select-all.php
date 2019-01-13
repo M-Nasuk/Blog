@@ -6,8 +6,8 @@ $posts_view = $channel->prepare
 (
   'SELECT b.*, u.pseudo, c.nom
   FROM billet as b
-  INNER join utilisateur as u on u.id_utilisateur = b.author
-  INNER join categorie as c on c.id_categorie = b.categorie
+  INNER JOIN utilisateur as u on u.id_utilisateur = b.author
+  INNER JOIN categorie as c on c.id_categorie = b.categorie
   ORDER BY b.date_de_publication DESC;
 ');
 
@@ -23,5 +23,5 @@ $cat_view = $channel->prepare
 
 $cat_view->execute();
 $cat_results = $cat_view->fetchAll(PDO::FETCH_ASSOC);
-  
+
 ?>

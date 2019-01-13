@@ -1,5 +1,4 @@
 <?php session_start();
-$_SESSION['user_data'];
 if (!$_SESSION['user_data']) {
   $_SESSION['test'] = null;
 } else {
