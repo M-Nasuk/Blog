@@ -1,8 +1,9 @@
 <?php session_start();
-if (!$_SESSION['user_data']) {
-  $_SESSION['test'] = null;
-} else {
+$_SESSION['user_data'];
+if (isset($_SESSION['user_data'])) {
   $_SESSION['test'] = 1;
+} else {
+  $_SESSION['test'] = null;
 } ?>
 <header id="header">
   <h1>Blog</h1>

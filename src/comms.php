@@ -6,7 +6,7 @@
   <article class="comm">
     <div>
       <img src="./public/user/<?= $key['pseudo']; ?>.jpeg" alt="<?= $key['pseudo']; ?>_avatar">
-      <h3><?= $key['nom']; ?></h3>
+      <h3><?= $key['pseudo']; ?></h3>
       <p>dit :</p>
       <div>
         <p><a href="#"><?= str_replace($date[0], $date[1], date('d F y \a H:i',strtotime($key['date_de_publication']))); ?></a></p>
