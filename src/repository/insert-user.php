@@ -1,5 +1,6 @@
 <?php
 
+include '../utilities.php';
 include 'db.php';
 
 $nom = $_POST['name'];
@@ -22,17 +23,8 @@ $data_user = [
   'avatarU' => $avatar
 ];
 
-$insert_user = $channel->prepare
-(
-  'INSERT INTO utilisateur (nom, prenom, pseudo, mot_de_passe, e_mail, telephone, role, avatar)
-  VALUES (:nomU, :prenomU, :pseudoU, :pwU, :emailU, :phoneU, :roleU, :avatarU);
-');
-
-
-$insert_user->execute($data_user);
-
-
-//include '../../test.phtml';
+insertUser($channel, $data_user);
 
 header('Location: ../../connexion.php');
+
  ?>

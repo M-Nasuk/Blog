@@ -1,5 +1,1 @@
-<?php
-
-include './template/results.phtml';
-
-?>
+<?php include './template/results.phtml'; ?>

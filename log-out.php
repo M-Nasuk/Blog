@@ -10,6 +10,6 @@ session_start();
 
 $_SESSION['user_data'] = null;
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: '.$_SERVER['HTTP_REFERER']);
 
  ?>

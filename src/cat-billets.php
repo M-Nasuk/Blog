@@ -1,5 +1,5 @@
-<?php include "./src/repository/select-single.php"; ?>
-<?php include "./src/utilities.php"; ?>
+<?php include "./repository/select-single.php"; ?>
+<?php include "./utilities.php"; ?>
 
 <h2 style="text-align: center; font-weight: normal; font-size: 5em; margin: 0 2rem 4rem 2rem; padding: 1rem; border: 2px solid #000;">
   <?= $single_cat_billets_result[0]['nom']; ?>

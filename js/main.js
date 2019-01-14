@@ -6,9 +6,9 @@ getData('./src/inscription.php', prependInscri);
 
 getData('./src/posts.php', appendArticles);
 
-//  $_GET['id'], Ajax ne fonctionne pas avec $_GET à travers l'url
-//getData('./src/cat-billets.php', appendResult);
-//getData('./src/post.php', appendPost);
+getData('./src/cat-billets.php', appendResult);
+
+getData('./src/post.php', appendPost);
 
 getData('./src/aside.php', appendAside);
 

@@ -17,7 +17,7 @@ function prependInscri(response)
 {
   $('main:not(.no_signin_link').prepend(response);
 }
-/*
+
 function appendPost(response)
 {
   $('#post main #s_post').append(response);
@@ -27,7 +27,7 @@ function appendResult(response)
 {
   $('#result main > section').append(response);
 }
-*/
+
 function appendAside(response)
 {
   $('aside').append(response);

@@ -1,5 +1,1 @@
-<?php
-
-include 'template/log-in.phtml';
-
-?>
+<?php include 'template/log-in.phtml'; ?>

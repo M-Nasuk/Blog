@@ -1,5 +1,5 @@
-<?php include "./src/repository/select-single.php"; ?>
-<?php include "./src/utilities.php"; ?>
+<?php include "./repository/select-single.php"; ?>
+<?php include "./utilities.php"; ?>
 
 
 <?php $date = changeMonth($single_post_result['date_de_publication']); ?>

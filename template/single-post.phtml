@@ -1,3 +1,5 @@
+<?php session_start(); $_SESSION['billet_id'] = $_GET['id']; ?>
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -19,16 +21,13 @@
 
     <main>
       <section id="s_post">
-        <?php include 'src/post.php'; ?>
+
       </section><!--
       --><aside>
-
       </aside>
       <div id="show_comms">
         <button type="button" name="button">Afficher les commentaires</button>
       </div>
-
-
       <section id="s_comms" class="hide">
         <h2>nb_comms sur "titre_post"</h2>
         <?php if ($_SESSION['user_data']): ?>
@@ -37,7 +36,6 @@
           <h3 style="text-align: center;"><a href="sign-in.php">S'inscrire pour poster votre commentaire</a></h3>
         <?php  endif; ?>
       </section>
-
     </main>
   </body>
 </html>

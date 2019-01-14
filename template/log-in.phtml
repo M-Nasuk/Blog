@@ -19,6 +19,15 @@
     <main>
       <form id="log_in" action="src/repository/connect.php" method="post">
         <h2>Connexion au Blog</h2>
+        <p style="text-align: center; font-size: 2.5em; margin-bottom: 2rem;">
+          <?php session_start();
+          if (isset($_SESSION['error'])) {
+            $error = $_SESSION['error'];
+          } else {
+            $error = null;
+          };
+          echo $error; ?>
+        </p>
         <fieldset>
           <ul>
             <li>
@@ -35,6 +44,7 @@
           </ul>
         </fieldset>
       </form>
+
     </main>
   </body>
 </html>
