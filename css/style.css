@@ -401,4 +401,23 @@ input[type='file'] {
   #test {
     background-color: #fff;
   }
+  #admin {
+    position: absolute;
+    left: 0;
+    color: #fff;
+  }
+  #admin h2 {
+    font-weight: normal;
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 1rem;
+  }
+  #administration main {
+    display: flex;
+    flex-direction: row;
+  }
+  .sec_admin textarea{
+    font-size: 1em;
+    width: 100%;
+  }
 }
