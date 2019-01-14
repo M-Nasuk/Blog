@@ -16,30 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `utilisateur`
+-- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `utilisateur`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `utilisateur` (
-  `id_utilisateur` bigint(11) NOT NULL AUTO_INCREMENT COMMENT 'id des utilisateurs',
-  `nom` varchar(64) DEFAULT NULL COMMENT 'Nom des utilisateurs',
-  `prenom` varchar(64) DEFAULT NULL COMMENT 'prenom des utilisateurs',
-  `pseudo` varchar(128) NOT NULL COMMENT 'pseudo des utilisateurs, unique par utilisateur',
-  `mot_de_passe` binary(64) DEFAULT NULL COMMENT 'password des utilisateurs',
-  `e_mail` varchar(96) DEFAULT NULL COMMENT 'email des utilisateurs',
-  `telephone` varchar(64) DEFAULT NULL COMMENT 'numero de telephone des utilisateurs',
-  `role` tinyint(1) NOT NULL COMMENT 'role des utilisateurs:\n	1 - Admin\n	2 - User',
-  `avatar` blob,
-  PRIMARY KEY (`id_utilisateur`),
-  UNIQUE KEY `pseudo_UNIQUE` (`pseudo`),
-  UNIQUE KEY `id_utilisateur_UNIQUE` (`id_utilisateur`),
-  UNIQUE KEY `e_mail_UNIQUE` (`e_mail`),
-  KEY `fk_utilisateur_1_idx` (`role`),
-  CONSTRAINT `fk_utilisateur_1` FOREIGN KEY (`role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+CREATE TABLE `role` (
+  `id_role` tinyint(1) NOT NULL,
+  `titre` varchar(45) NOT NULL,
+  `description` varchar(128) DEFAULT NULL,
+  `parent` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_role`),
+  KEY `fk_role_1_idx` (`parent`),
+  CONSTRAINT `fk_role_1` FOREIGN KEY (`parent`) REFERENCES `role` (`id_role`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'super_admin','Tout les droits',NULL),(2,'user','Select Only',NULL);
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -50,4 +52,4 @@ CREATE TABLE `utilisateur` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-10 17:37:59
+-- Dump completed on 2019-01-14  9:54:27

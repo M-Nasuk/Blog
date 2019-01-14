@@ -16,6 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categorie`
+--
+
+DROP TABLE IF EXISTS `categorie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categorie` (
+  `id_categorie` bigint(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(64) NOT NULL,
+  `description` varchar(128) DEFAULT NULL,
+  `image` varchar(45) DEFAULT NULL,
+  `parent` bigint(11) DEFAULT NULL,
+  PRIMARY KEY (`id_categorie`),
+  UNIQUE KEY `id_categorie_UNIQUE` (`id_categorie`),
+  KEY `fk_categorie_1_idx` (`parent`),
+  CONSTRAINT `fk_categorie_1` FOREIGN KEY (`parent`) REFERENCES `categorie` (`id_categorie`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `categorie`
 --
 
@@ -34,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-10 17:38:52
+-- Dump completed on 2019-01-14  9:54:27

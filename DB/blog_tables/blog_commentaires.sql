@@ -40,8 +40,18 @@ CREATE TABLE `commentaires` (
   CONSTRAINT `fk_commentaires_1` FOREIGN KEY (`author`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_commentaires_2` FOREIGN KEY (`billet`) REFERENCES `billet` (`id_billet`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_commentaires_3` FOREIGN KEY (`parent`) REFERENCES `commentaires` (`id_commentaires`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commentaires`
+--
+
+LOCK TABLES `commentaires` WRITE;
+/*!40000 ALTER TABLE `commentaires` DISABLE KEYS */;
+INSERT INTO `commentaires` VALUES (3,1,'2019-01-10 16:04:52','Test Comm 1',NULL,NULL,NULL,9,NULL),(4,1,'2019-01-10 16:05:22','Commentaires 2',NULL,NULL,NULL,9,NULL),(5,2,'2019-01-10 16:41:15','Comm 3 \r\nOK\r\nTest',NULL,NULL,NULL,9,NULL),(6,2,'2019-01-10 16:42:59','Commentaires 4',NULL,NULL,NULL,9,NULL),(7,2,'2019-01-10 16:43:25','Comentaires 5',NULL,NULL,NULL,9,NULL),(8,2,'2019-01-10 16:46:19','Commentaires 6',NULL,NULL,NULL,9,NULL),(9,3,'2019-01-11 14:06:15','salut',NULL,NULL,NULL,9,NULL);
+/*!40000 ALTER TABLE `commentaires` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -52,4 +62,4 @@ CREATE TABLE `commentaires` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-10 17:37:58
+-- Dump completed on 2019-01-14  9:54:27

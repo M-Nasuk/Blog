@@ -16,6 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `billet`
+--
+
+DROP TABLE IF EXISTS `billet`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `billet` (
+  `id_billet` bigint(11) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(64) NOT NULL DEFAULT 'Sans titre',
+  `corps_de_texte` longtext NOT NULL,
+  `image` blob,
+  `video` varchar(64) DEFAULT NULL,
+  `date_de_publication` datetime NOT NULL,
+  `categorie` bigint(11) NOT NULL,
+  `author` bigint(11) NOT NULL,
+  PRIMARY KEY (`id_billet`),
+  UNIQUE KEY `id_billet_UNIQUE` (`id_billet`),
+  UNIQUE KEY `titre_UNIQUE` (`titre`),
+  KEY `fk_billet_2_idx` (`categorie`),
+  KEY `fk_billet_1_idx` (`author`),
+  CONSTRAINT `fk_billet_1` FOREIGN KEY (`author`) REFERENCES `utilisateur` (`id_utilisateur`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_billet_2` FOREIGN KEY (`categorie`) REFERENCES `categorie` (`id_categorie`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Dumping data for table `billet`
 --
 
@@ -34,4 +60,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-10 17:38:52
+-- Dump completed on 2019-01-14  9:54:27
