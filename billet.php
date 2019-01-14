@@ -1,5 +1,1 @@
-<?php
-
-include './template/billet.phtml';
-
-?>
+<?php include './template/billet.phtml'; ?>
