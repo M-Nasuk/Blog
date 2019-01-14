@@ -1,12 +1,14 @@
-<?php session_start();
-$_SESSION['user_data'] = null;
+<?php
+session_start();
+
 if (isset($_SESSION['user_data'])) {
-  $test = 1;
+  $_SESSION['test'] = 1;
 } else {
-  $test = null;
+  $_SESSION['test'] = null;
 } ?>
+
 <header id="header">
-  <?php if($test && $_SESSION['user_data']['role'] == 0): ?>
+  <?php if($_SESSION['test'] && $_SESSION['user_data']['role'] == 0): ?>
     <a href="./admin.php" id="admin"><h2>Admin</h2></a>
   <?php endif; ?>
   <h1>Blog</h1>
@@ -14,11 +16,11 @@ if (isset($_SESSION['user_data'])) {
     <ul>
       <li><a href="index.php"><h2>Accueil</h2></a></li>
 
-      <?php if($test && $_SESSION['user_data']['role'] == 0 || $test && $_SESSION['user_data']['role'] == 1): ?>
+      <?php if($_SESSION['test'] && $_SESSION['user_data']['role'] == 0 || $_SESSION['test'] && $_SESSION['user_data']['role'] == 1): ?>
         <li><a href="billet.php"><h2>Billets</h2></a></li>
       <?php endif; ?>
 
-      <?php if (!$test): ?>
+      <?php if (!$_SESSION['test']): ?>
         <li><a href="connexion.php"><h2>Connexion</h2></a></li>
       <?php else: ?>
         <li id="user_box">

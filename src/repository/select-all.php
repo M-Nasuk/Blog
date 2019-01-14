@@ -24,4 +24,13 @@ $cat_view = $channel->prepare
 $cat_view->execute();
 $cat_results = $cat_view->fetchAll(PDO::FETCH_ASSOC);
 
+$users_view = $channel->prepare
+(
+  'SELECT *
+  FROM utilisateur;
+');
+
+$users_view->execute();
+$users_results = $users_view->fetchAll(PDO::FETCH_ASSOC);
+
 ?>

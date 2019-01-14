@@ -1,3 +1,6 @@
+<?php
+include './src/repository/select-all.php';
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -15,38 +18,82 @@
     <title>Administration</title>
   </head>
   <body id="administration">
+    <h1 style="text-align: center; color: #fff; width: 100%;">Update Data</h1>
     <main>
       <section class="sec_admin">
+        <h2>Billets</h2>
+        <select name="billet" style="margin: 0 auto; display: block; font-size: 2em;">
+          <?php foreach ($posts_results as $key): ?>
+            <option value="<?= $key['id_billet']; ?>"><?= $key['titre']; ?></option>
+            <?php if($_POST['billet']): ?>
+              <form class="" action="index.html" method="post">
+                <fieldset>
+                  <ul>
+                    <li>
+                      Titre :<input type="text" name="" value="<?= $key['titre']; ?>">
+
+                    </li>
+                    <li>ID :<input type="text" name="" value="<?= $key['id_billet']; ?>"></li>
+                    <li>Titre :<input type="text" name="" value="<?= $key['titre']; ?>"></li>
+                    <li>Corps :<textarea name="name" rows="6" cols="30"><?= $key['corps_de_texte']; ?></textarea></li>
+                    <li>Image :<input type="file" name="" value="">
+                      <img src="<?= './public/images/'.$key['titre'].'.jpeg'; ?>" alt="">
+                    </li>
+                    <li>
+                      <label>Categorie :</label>
+                      <select name="cat">
+                        <?php foreach ($cat_results as $key): ?>
+                          <option value="<?= $key['id_categorie']; ?>"><?= $key['nom']; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                    </li>
+                    <li>
+                      <label>Auteur :</label>
+                      <select name="user">
+                        <?php foreach ($users_results as $key): ?>
+                          <option value="<?= $key['id_utilisateur']; ?>"><?= $key['pseudo']; ?></option>
+                        <?php endforeach; ?>
+                      </select>
+                  </li>
+                  </ul>
+                </fieldset>
+              </form>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </select>
+
+      </section>
+      <section class="sec_admin">
+        <h2>Utilisateurs</h2>
         <form class="" action="index.html" method="post">
           <fieldset>
             <ul>
+              <select name="user">
+                <?php foreach ($users_results as $key): ?>
+                  <option value="<?= $key['id_utilisateur']; ?>"><?= $key['pseudo']; ?></option>
+                <?php endforeach; ?>
+              </select>
               <li><input type="text" name="" value=""></li>
               <li><input type="text" name="" value=""></li>
-              <li><textarea name="name" rows="8" cols="30"></textarea></li>
+              <li><textarea name="name" rows="6" cols="30"></textarea></li>
               <li><input type="file" name="" value=""></li>
             </ul>
           </fieldset>
         </form>
       </section>
       <section class="sec_admin">
+        <h2>Categorie</h2>
         <form class="" action="index.html" method="post">
           <fieldset>
             <ul>
+              <select name="cat">
+                <?php foreach ($cat_results as $key): ?>
+                  <option value="<?= $key['id_categorie']; ?>"><?= $key['nom']; ?></option>
+                <?php endforeach; ?>
+              </select>
               <li><input type="text" name="" value=""></li>
               <li><input type="text" name="" value=""></li>
-              <li><textarea name="name" rows="8" cols="30"></textarea></li>
-              <li><input type="file" name="" value=""></li>
-            </ul>
-          </fieldset>
-        </form>
-      </section>
-      <section class="sec_admin">
-        <form class="" action="index.html" method="post">
-          <fieldset>
-            <ul>
-              <li><input type="text" name="" value=""></li>
-              <li><input type="text" name="" value=""></li>
-              <li><textarea name="name" rows="8" cols="30"></textarea></li>
+              <li><textarea name="name" rows="6" cols="30"></textarea></li>
               <li><input type="file" name="" value=""></li>
             </ul>
           </fieldset>

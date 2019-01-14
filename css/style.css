@@ -119,6 +119,7 @@ aside {
 .art {
   margin-bottom: 3rem;
   padding: 0.5rem;
+  text-align: center;
 }
 .art img {
   max-width: 100%;
@@ -276,6 +277,7 @@ input[type='file'] {
   font-size: 4rem;
   padding: 5px 10px;
   border: 2px solid #000;
+  margin: 0 1rem 2rem;
 }
 #new_billet fieldset {
   border: none;
@@ -356,6 +358,9 @@ input[type='file'] {
   .art div h3 {
     font-weight: normal;
   }
+  .art {
+    text-align: left;
+  }
 
   #post main section:not(#s_post) {
     width: 70%;
@@ -419,5 +424,11 @@ input[type='file'] {
   .sec_admin textarea{
     font-size: 1em;
     width: 100%;
+  }
+  #administration * {
+    font-weight: normal;
+  }
+  #administration section > h2 {
+    text-align: center;
   }
 }
