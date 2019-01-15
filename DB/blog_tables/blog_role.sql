@@ -39,7 +39,7 @@ CREATE TABLE `role` (
 
 LOCK TABLES `role` WRITE;
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
-INSERT INTO `role` VALUES (1,'super_admin','Tout les droits',NULL),(2,'user','Select Only',NULL);
+INSERT INTO `role` VALUES (0,'super_admin','Tout les droits',NULL),(1,'admin','Select & Update',NULL),(2,'user','Select Only',NULL);
 /*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-01-14  9:54:27
+-- Dump completed on 2019-01-15 18:38:16
