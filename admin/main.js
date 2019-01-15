@@ -10,12 +10,19 @@ $(document).ready(function () {
     $.getJSON('admin/data.php', function(data) {
       //console.log(data);
       $('<li>').html(
-        $('<input>').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
+        $('<input type=text>').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
       ).prepend($('<label>').html('ID :')).appendTo('#fd ul');
-      
+
       $('<li>').html(
-        $('<input>').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre'])
+        $('<input type="text">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre'])
       ).prepend($('<label>').html('Titre :')).appendTo('#fd ul');
+
+      $('<li>').html(
+        $('<textarea rows="4">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte'])
+      ).prepend($('<label>').html('Titre :')).appendTo('#fd ul');
+
+      $('<li>').html(
+        $('<input type="file">')).prepend($('<label>').html('Titre :')).append($('<img>').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg')).appendTo('#fd ul');
 
 
     });
