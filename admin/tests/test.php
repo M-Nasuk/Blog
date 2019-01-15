@@ -20,10 +20,6 @@
     <main>
       <section style="display: inline-block; width: 70%;">
 
-        <p>session</p>
-        <?php foreach ($_SESSION as $key => $val):?>
-          <p><?= var_dump($key);  var_dump($val); ?></p>
-        <?php endforeach; ?>-->
       </section><!--
       --><aside>
 

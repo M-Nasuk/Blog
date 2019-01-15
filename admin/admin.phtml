@@ -25,20 +25,20 @@ include './src/repository/select-all.php';
       <section class="sec_admin">
         <h2>Billets</h2>
         <select name="billet" style="margin: 0 auto; display: block; font-size: 2em;">
-          <?php foreach ($posts_results as $key => $val): ?>
-            <option value="<?= $key; ?>"><?= $val['titre']; ?></option>
-          <?php endforeach; ?>
+
         </select>
-        <p id="p">
+        <!--p id="p">
           <script type="text/javascript">
             $('select[name="billet"]').change(function(){
               $('#p').html($('select[name="billet"]').val());
             });
           </script>
-        </p>
+        </p-->
         <form class="" action="index.html" method="post">
           <fieldset id="fd">
+            <ul>
 
+            </ul>
           </fieldset>
         </form>
 

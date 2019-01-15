@@ -33,12 +33,5 @@ $users_view = $channel->prepare
 $users_view->execute();
 $users_results = $users_view->fetchAll(PDO::FETCH_ASSOC);
 
-$data = [];
-
-$data['posts'] = $posts_results;
-$data['cat'] = $cat_results;
-$data['users'] = $users_results;
-
-echo json_encode($data);
 
 ?>

@@ -420,6 +420,7 @@ input[type='file'] {
   #administration main {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
   .sec_admin textarea{
     font-size: 1em;
@@ -430,5 +431,8 @@ input[type='file'] {
   }
   #administration section > h2 {
     text-align: center;
+  }
+  #administration form {
+    width: 345px;
   }
 }
