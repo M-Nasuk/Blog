@@ -13,8 +13,8 @@
       </div>
     </div>
     <p style="border: 2px solid #000; border-radius: 5px; padding: 1rem;"><?= $key['texte']; ?></p>
-    <div class="d_button">
-      <?php if ($_SESSION): ?>
+    <!--<div class="d_button">
+      <?php if (isset($_SESSION['user_data'])): ?>
         <button type="button" class="answer" name="button">Repondre</button>
       <?php endif; ?>
       <div class="hide d_form">
@@ -39,6 +39,6 @@
           </fieldset>
         </form>
       </div>
-    </div>
+    </div>-->
   </article>
 <?php endforeach; ?>
