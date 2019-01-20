@@ -30,7 +30,7 @@
       </div>
       <section id="s_comms" class="hide">
         <h2>nb_comms sur "titre_post"</h2>
-        <?php if ($_SESSION['user_data']): ?>
+        <?php if (isset($_SESSION['user_data'])): ?>
           <button id="add_comm" type="button" name="button">Ajouter un commentaire</button>
         <?php else: ?>
           <h3 style="text-align: center;"><a href="sign-in.php">S'inscrire pour poster votre commentaire</a></h3>
