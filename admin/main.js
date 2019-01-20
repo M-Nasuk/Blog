@@ -86,7 +86,6 @@ $(document).ready(function () {
       $('<li>').html(
         $('<select name="role">'))
         .prepend($('<label>').html('New role :'))
-        //.prepend($('<p>').html(`Role : ${data['users'][$('select[name="user"]').val()])['telephone']}`))
         .appendTo('#fd_user ul');
 
       $('<li>').html(
