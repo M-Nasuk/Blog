@@ -18,19 +18,19 @@ $(document).ready(function () {
     $.getJSON('admin/data.php', function(data) {
       $('#fd ul').html('');
       $('<li>').html(
-        $('<input type="text">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
+        $('<input type="text" name="billet_id">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
       ).prepend($('<label>').html('ID :')).appendTo('#fd ul');
 
       $('<li>').html(
-        $('<input type="text">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre'])
+        $('<input type="text" name="billet_titre">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre'])
       ).prepend($('<label>').html('Titre :')).appendTo('#fd ul');
 
       $('<li>').html(
-        $('<textarea rows="4">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte'])
+        $('<textarea rows="4" name="billet_cdt">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte'])
       ).prepend($('<label>').html('Corps :')).appendTo('#fd ul');
 
       $('<li>').html(
-        $('<input type="file">'))
+        $('<input type="file" name="billet_img" accept="image/*">'))
         .prepend($('<label>').html('Image :'))
         .append($('<img>').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg'))
         .appendTo('#fd ul');
@@ -96,6 +96,11 @@ $(document).ready(function () {
         $('<option>').val(i).html(JSON.parse(data['roles'][i])['titre']).appendTo('select[name="role"]');
       }
     });
+  });
+
+  $('input[name="billet_img"]').change(function() {
+    $('input[name="billet_img"] + img').after('<p>').html($('input[name="billet_img"]').val());
+    //console.log($(this).val());
   });
 
 })
