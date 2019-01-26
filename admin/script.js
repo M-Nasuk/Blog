@@ -14,17 +14,18 @@ function showPost() {
   $.getJSON('admin/data.php', function(data) {
     $('#fd ul').html('');
     $('<li>').html(
-      $('<label>').text(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
-    ).append($('<input type="hidden" name="id">')).val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet'])
-    .prepend($('<label>').html('ID : ')).appendTo('#fd ul');
+      $('<label>').text(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet']))
+      .append($('<input type="hidden" name="id">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet']))
+      .prepend($('<label>').html('ID : ')).appendTo('#fd ul');
 
     $('<li>').html(
-      $('<input type="text" name="billet_titre">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre'])
-    ).prepend($('<label>').html('Titre :')).appendTo('#fd ul');
+      $('<input type="text" name="billet_titre">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']))
+      .append($('<input type="hidden" name="exTitle">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']))
+      .prepend($('<label>').html('Titre :')).appendTo('#fd ul');
 
     $('<li>').html(
-      $('<textarea rows="4" name="billet_cdt">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte'])
-    ).prepend($('<label>').html('Corps :')).appendTo('#fd ul');
+      $('<textarea rows="4" name="billet_cdt">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte']))
+      .prepend($('<label>').html('Corps :')).appendTo('#fd ul');
 
     $('<li>').html(
       $('<input type="file" name="billet_img" accept="image/*">'))
@@ -34,15 +35,19 @@ function showPost() {
 
     $('<li>').html(
       $('<select name="categorie">'))
-      .prepend($('<label>').html('Categorie :'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['categorie']))
+      .prepend($('<label style="margin-right: 1rem;">').html('Categorie : '+JSON.parse(data['posts'][$('select[name="billet"]').val()])['categorie']))
       .appendTo('#fd ul');
+    $('<option>Selectionnez une categorie</option>')
+    .val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['categorie'])
+    .prependTo('select[name="categorie"]');
 
     $('<li>').html(
       $('<button type="submit" style="display: block; margin: 1rem auto; font-size: 2em;">Modifier</button>'))
       .appendTo('#fd ul');
 
-    for (let i = 0; i < data['cat'].length; i++) {
-      $('<option>').val(i).html(JSON.parse(data['cat'][i])['nom']).appendTo('select[name="categorie"]');
+    let x = 0;
+    for (let i = 1; i < data['cat'].length + 1; i++) {
+      $('<option>').val(i).html(JSON.parse(data['cat'][x])['id_categorie']+' - '+JSON.parse(data['cat'][x++])['nom']).appendTo('select[name="categorie"]');
     }
   });
 }
