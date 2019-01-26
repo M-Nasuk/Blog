@@ -20,22 +20,28 @@ include './src/repository/select-all.php';
     <title>Administration</title>
   </head>
   <body id="administration">
-    <h1 style="text-align: center; color: #fff; width: 100%; margin: 0;">Update Data</h1>
     <main>
       <section class="sec_admin">
         <h2>Billets</h2>
         <select name="billet" style="margin: 0 auto; display: block; font-size: 2em;">
 
         </select>
-        <form action="admin/repository/update.php" method="post" enctype="multipart/form-data">
+        <form action="admin/repository/update_post.php" method="post" enctype="multipart/form-data">
           <fieldset id="fd" style="border: none;">
             <ul>
 
             </ul>
           </fieldset>
         </form>
-
-
+        <?php session_start(); ?>
+        <?php if(isset($_SESSION['billet_updated_message'])): ?>
+          <p id="p" style="text-align: center;"><?= $_SESSION['billet_updated_message']; unset($_SESSION['billet_updated_message']); ?></p>
+          <script type="text/javascript">
+          window.setTimeout(function () {
+            $('#p').html('');;
+          }, 3000);
+          </script>
+        <?php endif; ?>
       </section>
 
       <section class="sec_admin">
@@ -43,7 +49,7 @@ include './src/repository/select-all.php';
         <select name="user" style="margin: 0 auto; display: block; font-size: 2em;">
 
         </select>
-        <form action="admin/repository/update.php" method="post" enctype="multipart/form-data">
+        <form action="admin/repository/update_user.php" method="post" enctype="multipart/form-data">
           <fieldset id="fd_user" style="border: none;">
             <ul>
 
@@ -51,24 +57,6 @@ include './src/repository/select-all.php';
           </fieldset>
         </form>
       </section>
-
-      <!--section class="sec_admin">
-        <h2>Categorie</h2>
-        <select name="cat" style="margin: 0 auto; display: block; font-size: 2em;">
-
-        </select>
-        <form class="" action="index.html" method="post">
-          <fieldset>
-            <ul>
-
-              <li><input type="text" name="" value=""></li>
-              <li><input type="text" name="" value=""></li>
-              <li><textarea name="name" rows="6" cols="30"></textarea></li>
-              <li><input type="file" name="" value=""></li>
-            </ul>
-          </fieldset>
-        </form>
-      </section-->
     </main>
   </body>
 </html>

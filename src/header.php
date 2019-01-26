@@ -11,7 +11,13 @@ if (isset($_SESSION['user_data'])) {
   <?php if($_SESSION['test'] && $_SESSION['user_data']['role'] == 0): ?>
     <a href="./admin.php" id="admin"><h2>Admin</h2></a>
   <?php endif; ?>
-  <h1>Blog</h1>
+
+  <?php if(stripos($_SERVER['HTTP_REFERER'], 'admin.php')): ?>
+    <h1>Update Data</h1>
+  <?php else: ?>
+    <h1>Blog</h1>
+  <?php endif; ?>
+
   <nav id="h_nav">
     <ul>
       <li><a href="index.php"><h2>Accueil</h2></a></li>

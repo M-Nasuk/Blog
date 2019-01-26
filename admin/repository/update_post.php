@@ -1,24 +1,19 @@
 <?php
 
 include '../../src/repository/db.php';
-//var_dump($_FILES);
-foreach ($_POST as $key => $value) {
-  var_dump('<p>'.$key.' : '.$value.'</p>');
-}
-
 
 if (isset($_POST)) {
   $data = [
     'titre' => $_POST['billet_titre'],
     'corps_texte' => $_POST['billet_cdt'],
     'categorie' => $_POST['categorie'],
-    'id' => $_POST['id']
+    'id' => $_POST['billet_id']
   ];
 
   $titre = $_POST['billet_titre'];
   $corps_texte = $_POST['billet_cdt'];
   $categorie = $_POST['categorie'];
-  $id = $_POST['id'];
+  $id = $_POST['billet_id'];
   $exTitle = $_POST['exTitle'];
 
   if (!empty($_FILES['billet_img']['name'])) {
@@ -35,8 +30,12 @@ if (isset($_POST)) {
     $update_post->execute([$titre, $corps_texte, $img_blob, $categorie, $id]);
 
     if ($exTitle != $titre){
-      unlink('./public/images/'.$exTitle);
+      unlink('../../public/images/'.$exTitle);
     }
+
+    session_start();
+    $_SESSION['billet_updated_message'] = "L'article a bien ete mis a jour";
+    header("Location: ../../admin.php");
 
   } else {
 
@@ -53,17 +52,10 @@ if (isset($_POST)) {
       unlink('../../public/images/'.$exTitle.'.jpeg');
     }
 
-    echo "L'article a bien été mis a jour";
-
+    session_start();
+    $_SESSION['billet_updated_message'] = "L'article a bien ete mis a jour";
+    header("Location: ../../admin.php");
   }
 }
 
-
-
-
-
-
-
-
-
- ?>
+?>

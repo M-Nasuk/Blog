@@ -15,7 +15,7 @@ function showPost() {
     $('#fd ul').html('');
     $('<li>').html(
       $('<label>').text(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet']))
-      .append($('<input type="hidden" name="id">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet']))
+      .append($('<input type="hidden" name="billet_id">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['id_billet']))
       .prepend($('<label>').html('ID : ')).appendTo('#fd ul');
 
     $('<li>').html(
@@ -30,7 +30,7 @@ function showPost() {
     $('<li>').html(
       $('<input type="file" name="billet_img" accept="image/*">'))
       .prepend($('<label>').html('Image :'))
-      .append($('<img>').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg'))
+      .append($('<img style="max-width: 100%;">').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg'))
       .appendTo('#fd ul');
 
     $('<li>').html(
@@ -56,29 +56,29 @@ function showUser() {
   $.getJSON('admin/data.php', function(data) {
     $('#fd_user ul').html('');
     $('<li>').html(
-      $('<input type="text">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['nom'])
+      $('<input type="text" name="nom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['nom'])
     ).prepend($('<label>').html('Nom :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['prenom'])
+      $('<input type="text" name="prenom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['prenom'])
     ).prepend($('<label>').html('Prenom :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo'])
+      $('<input type="text" name="pseudo">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo'])
     ).prepend($('<label>').html('Pseudo :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['e_mail'])
+      $('<input type="text" name="email">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['e_mail'])
     ).prepend($('<label>').html('Email :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['telephone'])
+      $('<input type="text" name="telephone">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['telephone'])
     ).prepend($('<label>').html('Telephone :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="file">'))
+      $('<input type="file" name="avatar">'))
       .prepend($('<label>').html('Image :'))
-      .append($('<img>').attr('src', 'public/user/'+JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo']+'.jpeg'))
+      .append($('<img style="max-width: 100%;">').attr('src', 'public/user/'+JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo']+'.jpeg'))
       .appendTo('#fd_user ul');
 
     $('<li>').html(
