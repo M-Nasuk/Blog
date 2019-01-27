@@ -1,53 +1,64 @@
 <?php
 
 include '../../src/repository/db.php';
-
-
-
+var_dump($_POST);
 if (isset($_POST)) {
-  $data = [];
 
+  if ($_POST['update'] == 'update'){
 
-  if (!empty($_FILES['billet_img']['name'])) {
+    $data = [];
 
-    $img_blob = addslashes(file_get_contents($_FILES['billet_img']['tmp_name']));
-
-    $update_post = $channel->prepare
-    (
-      'UPDATE billet
-      SET titre = ?, corps_de_texte = ?, image = ?, categorie = ?
-      WHERE id_billet = ?;
-    ');
-
-    $update_post->execute([$titre, $corps_texte, $img_blob, $categorie, $id]);
-
-    if ($exTitle != $titre){
-      unlink('../../public/images/'.$exTitle);
+    foreach ($_POST as $key => $value) {
+      if ($key == 'exPseudo') {
+        continue;
+      } else {
+        $data[$key] = $value;
+      }
     }
 
+/*    $img = '';
+    if (!empty($_FILES['avatar']['name'])){
+      $data['avatar'] = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
+      $img = ", avatar = :avatar";
+    }
+*/
+/*    if ($_POST['exPseudo'] != $_POST['pseudo']){
+      unlink('../../public/user/'.$_POST['exPseudo'].'.jpeg');
+      $image = $_POST['pseudo'].'.jpeg';
+      file_put_contents('../../public/user/'.$image, file_get_contents($_FILES['avatar']['tmp_name']));
+    }
+*/
+    $update_user = $channel->prepare
+    (
+      "UPDATE utilisateur
+      SET nom = :nom, prenom = :prenom, /*pseudo = :pseudo,*/ e_mail = :email, telephone = :telephone, role = :role
+      WHERE id_utilisateur = :user_id;
+    ");
+
+    $update_user->execute($data);
+
     session_start();
-    $_SESSION['billet_updated_message'] = "L'article a bien ete mis a jour";
+    $_SESSION['user_updated_message'] = "L'utilisateur a bien ete mis a jour";
     header("Location: ../../admin.php");
 
-  } else {
+  } elseif ($_POST['update'] == 'delete') {
 
-    $update_post = $channel->prepare
+    $delete_user = $channel->prepare
     (
-      'UPDATE billet
-      SET titre = :titre, corps_de_texte = :corps_texte, categorie = :categorie
-      WHERE id_billet = :id;
+      'DELETE FROM utilisateur
+      WHERE id_utilisateur = ?;
     ');
 
-    $update_post->execute($data);
+    $delete_user->execute([$_POST['user_id']]);
 
-    if ($exTitle != $data['titre']){
-      unlink('../../public/images/'.$exTitle.'.jpeg');
-    }
+    unlink('../../public/user/'.$_POST['exPseudo'].'.jpeg');
 
     session_start();
-    $_SESSION['billet_updated_message'] = "L'article a bien ete mis a jour";
+    $_SESSION['user_updated_message'] = "L'utilisateur a bien ete supprime";
     header("Location: ../../admin.php");
+
   }
+
 }
 
 

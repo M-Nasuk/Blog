@@ -23,7 +23,7 @@ if (isset($_SESSION['user_data'])) {
       <li><a href="index.php"><h2>Accueil</h2></a></li>
 
       <?php if($_SESSION['test'] && $_SESSION['user_data']['role'] == 0 || $_SESSION['test'] && $_SESSION['user_data']['role'] == 1): ?>
-        <li><a href="billet.php"><h2>Billets</h2></a></li>
+        <li><a href="billet.php"><h2>New Billet</h2></a></li>
       <?php endif; ?>
 
       <?php if (!$_SESSION['test']): ?>

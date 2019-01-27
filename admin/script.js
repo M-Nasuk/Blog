@@ -37,12 +37,17 @@ function showPost() {
       $('<select name="categorie">'))
       .prepend($('<label style="margin-right: 1rem;">').html('Categorie : '+JSON.parse(data['posts'][$('select[name="billet"]').val()])['categorie']))
       .appendTo('#fd ul');
+
     $('<option>Selectionnez une categorie</option>')
     .val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['categorie'])
     .prependTo('select[name="categorie"]');
 
     $('<li>').html(
-      $('<button type="submit" style="display: block; margin: 1rem auto; font-size: 2em;">Modifier</button>'))
+      $('<button type="submit" name="update" value="update" style="display: block; margin: 1rem auto; font-size: 2em;">Modifier</button>'))
+      .appendTo('#fd ul');
+
+    $('<li>').html(
+      $('<button type="submit" name="update" value="delete" style="display: block; margin: 1rem auto; font-size: 2em;">Supprimer Post</button>'))
       .appendTo('#fd ul');
 
     let x = 0;
@@ -56,42 +61,52 @@ function showUser() {
   $.getJSON('admin/data.php', function(data) {
     $('#fd_user ul').html('');
     $('<li>').html(
-      $('<input type="text" name="nom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['nom'])
-    ).prepend($('<label>').html('Nom :')).appendTo('#fd_user ul');
+      $('<input type="text" name="nom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['nom']))
+      .append($('<input type="hidden" name="user_id">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['id_utilisateur']))
+      .prepend($('<label>').html('Nom :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text" name="prenom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['prenom'])
-    ).prepend($('<label>').html('Prenom :')).appendTo('#fd_user ul');
+      $('<input type="text" name="prenom">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['prenom']))
+      .prepend($('<label>').html('Prenom :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text" name="pseudo">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo'])
-    ).prepend($('<label>').html('Pseudo :')).appendTo('#fd_user ul');
+      /*$('<input type="text" name="pseudo">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo']))
+      .append(*/$('<input type="hidden" name="exPseudo">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo']))
+      .prepend($('<label>').html('Pseudo : '+JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo'])).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text" name="email">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['e_mail'])
-    ).prepend($('<label>').html('Email :')).appendTo('#fd_user ul');
+      $('<input type="text" name="email">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['e_mail']))
+      .prepend($('<label>').html('Email :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="text" name="telephone">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['telephone'])
-    ).prepend($('<label>').html('Telephone :')).appendTo('#fd_user ul');
+      $('<input type="text" name="telephone">').val(JSON.parse(data['users'][$('select[name="user"]').val()])['telephone']))
+      .prepend($('<label>').html('Telephone :')).appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<input type="file" name="avatar">'))
-      .prepend($('<label>').html('Image :'))
+      /*$('<input type="file" name="avatar">'))
+      .prepend(*/$('<label style="vertical-align: top;">').html('Avatar :'))
       .append($('<img style="max-width: 100%;">').attr('src', 'public/user/'+JSON.parse(data['users'][$('select[name="user"]').val()])['pseudo']+'.jpeg'))
       .appendTo('#fd_user ul');
 
     $('<li>').html(
-      $('<label>').html('Role : '+JSON.parse(data['users'][$('select[name="user"]').val()])['role'])
-    ).appendTo('#fd_user ul');
+      $('<label>').html('Role : '+JSON.parse(data['users'][$('select[name="user"]').val()])['role']))
+      .appendTo('#fd_user ul');
 
     $('<li>').html(
       $('<select name="role">'))
       .prepend($('<label>').html('New role :'))
       .appendTo('#fd_user ul');
 
+    $('<option>Selectionnez un role</option>')
+    .val(JSON.parse(data['users'][$('select[name="user"]').val()])['role'])
+    .prependTo('select[name="role"]');
+
     $('<li>').html(
-      $('<button type="submit" style="display: block; margin: 1rem auto; font-size: 2em;">Modifier</button>'))
+      $('<button type="submit" name="update" value="update" style="display: block; margin: 1rem auto; font-size: 2em;">Modifier</button>'))
+      .appendTo('#fd_user ul');
+
+    $('<li>').html(
+      $('<button type="submit" name="update" value="delete" style="display: block; margin: 1rem auto; font-size: 2em;">Supprimer Utilisateur</button>'))
       .appendTo('#fd_user ul');
 
     for (let i = 0; i < data['roles'].length; i++) {

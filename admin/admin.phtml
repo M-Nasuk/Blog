@@ -56,6 +56,14 @@ include './src/repository/select-all.php';
             </ul>
           </fieldset>
         </form>
+        <?php if(isset($_SESSION['user_updated_message'])): ?>
+          <p id="p" style="text-align: center;"><?= $_SESSION['user_updated_message']; unset($_SESSION['user_updated_message']); ?></p>
+          <script type="text/javascript">
+          window.setTimeout(function () {
+            $('#p').html('');;
+          }, 3000);
+          </script>
+        <?php endif; ?>
       </section>
     </main>
   </body>

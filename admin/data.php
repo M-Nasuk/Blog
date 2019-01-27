@@ -34,8 +34,7 @@ $users_results = $users_view->fetchAll(PDO::FETCH_ASSOC);
 $roles_view = $channel->prepare
 (
   'SELECT id_role, titre
-  FROM role
-  ORDER BY id_role DESC;
+  FROM role;
 ');
 
 $roles_view->execute();

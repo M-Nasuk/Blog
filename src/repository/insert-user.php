@@ -10,7 +10,7 @@ $pw = password_hash($_POST['pwd'], PASSWORD_DEFAULT);
 $email = $_POST['e_mail'];
 $role = 2;
 $phone = $_POST['phoneNumber'];
-$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));;
+$avatar = addslashes(file_get_contents($_FILES['avatar']['tmp_name']));
 
 $data_user = [
   'nomU' => $nom,
