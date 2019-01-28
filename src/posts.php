@@ -2,6 +2,7 @@
 <?php include "./utilities.php"; ?>
 
 <?php $x = count($posts_results); ?>
+
 <?php foreach ($posts_results as $result_id): ?>
 
   <?php $date = changeMonth($result_id['date_de_publication']); ?>
@@ -35,6 +36,6 @@
 
 <?php endfor; ?>-->
 
-<?php if(count($posts_counts) > $x): ?>
+<?php if(count($posts_counts) >= 5): ?>
   <a href="?x=<?php echo $x; ?>">Voir ancien articles</a>
 <?php endif; ?>
