@@ -112,7 +112,9 @@ li {
 aside {
   display: none;
 }
-
+#articles {
+  padding: 1rem 0 3rem;
+}
 #s_post {
   padding: 0 1rem;
   margin-bottom: 2rem;
@@ -136,10 +138,10 @@ article.art:not(:last-of-type) {
 #articles > a {
   display: block;
   text-align: center;
-  font-size: 2em;
-  padding: 1rem;
+  font-size: 3em;
   width: 40%;
-  margin: auto;
+  margin: 2rem auto;
+  border: 2px dotted #000;
 }
 
 /* Post Article Style */
