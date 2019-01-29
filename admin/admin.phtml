@@ -33,7 +33,6 @@ include './src/repository/select-all.php';
             </ul>
           </fieldset>
         </form>
-        <?php session_start(); ?>
         <?php if(isset($_SESSION['billet_updated_message'])): ?>
           <p id="p" style="text-align: center;"><?= $_SESSION['billet_updated_message']; unset($_SESSION['billet_updated_message']); ?></p>
           <script type="text/javascript">

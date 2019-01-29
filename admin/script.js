@@ -24,7 +24,7 @@ function showPost() {
       .prepend($('<label>').html('Titre :')).appendTo('#fd ul');
 
     $('<li>').html(
-      $('<textarea rows="4" name="billet_cdt">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte']))
+      $('<textarea rows="8" name="billet_cdt">').val(JSON.parse(data['posts'][$('select[name="billet"]').val()])['corps_de_texte']))
       .prepend($('<label>').html('Corps :')).appendTo('#fd ul');
 
     $('<li>').html(
