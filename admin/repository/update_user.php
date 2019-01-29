@@ -3,7 +3,7 @@
 ob_start();
 
 include '../../src/repository/db.php';
-var_dump($_POST);
+
 if (isset($_POST)) {
 
   if ($_POST['update'] == 'update'){
@@ -13,6 +13,8 @@ if (isset($_POST)) {
     foreach ($_POST as $key => $value) {
       if ($key == 'exPseudo') {
         continue;
+      } elseif ($key == 'update') {
+        continue;
       } else {
         $data[$key] = $value;
       }
@@ -21,7 +23,7 @@ if (isset($_POST)) {
     $update_user = $channel->prepare
     (
       "UPDATE utilisateur
-      SET nom = :nom, prenom = :prenom, /*pseudo = :pseudo,*/ e_mail = :email, telephone = :telephone, role = :role
+      SET nom = :nom, prenom = :prenom, e_mail = :email, telephone = :telephone, role = :role
       WHERE id_utilisateur = :user_id;
     ");
 
