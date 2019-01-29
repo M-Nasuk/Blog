@@ -331,6 +331,22 @@ input[type='file'] {
 }
 
 
+/* admin */
+#administration * {
+  font-weight: normal;
+}
+.sec_admin > h2 {
+  text-align: center;
+}
+.sec_admin form {
+  width: 40%;
+  margin: auto;
+}
+.sec_admin form img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
 
 /* Desktop */
 @media SCREEN and (min-width: 1024px) {

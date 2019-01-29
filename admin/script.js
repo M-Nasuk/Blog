@@ -30,7 +30,7 @@ function showPost() {
     $('<li>').html(
       $('<input type="file" name="billet_img" accept="image/*">'))
       .prepend($('<label>').html('Image :'))
-      .append($('<img style="max-width: 100%;">').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg'))
+      .append($('<img>').attr('src', 'public/images/'+JSON.parse(data['posts'][$('select[name="billet"]').val()])['titre']+'.jpeg'))
       .appendTo('#fd ul');
 
     $('<li>').html(
