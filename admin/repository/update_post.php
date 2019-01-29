@@ -1,5 +1,7 @@
 <?php
 
+ob_start();
+
 include '../../src/repository/db.php';
 
 if (isset($_POST)) {
