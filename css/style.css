@@ -155,12 +155,21 @@ aside {
   display: none;
 }
 
-#s_comms > h2, #sign_in h2 {
+#s_comms > h2, #sign_in h2, .nbcomm {
   text-align: center;
   font-weight: normal;
   padding: 1rem;
   border: 2px solid #000;
   margin-bottom: 3rem;
+}
+.nbcomm {
+  font-size: 2.5em;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+.nbcomm + h3 {
+  width: 70%;
+  margin: 1rem auto;
 }
 .comm {
   margin-bottom: 3rem;

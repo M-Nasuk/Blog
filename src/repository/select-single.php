@@ -20,6 +20,7 @@ $single_post_view = $channel->prepare
 $single_post_view->execute([$billet_id]);
 $single_post_result = $single_post_view->fetch(PDO::FETCH_ASSOC);
 
+$_SESSION['title'] = $single_post_result['titre'];
 
 if (isset($_SESSION['cat_id'])) {
   $cat_id = $_SESSION['cat_id'];
