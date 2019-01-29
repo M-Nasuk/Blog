@@ -4,11 +4,10 @@ include 'db.php';
 
 session_start();
 if (isset($_SESSION['x'])) {
-  if ($_SESSION['x'] == 5) {
-    $x = $_SESSION['x'];
-    $y = $x + 5;
-    $limit = "LIMIT $y OFFSET $x";
-  }
+
+  $x = $_SESSION['x'];
+  $limit = "LIMIT 5 OFFSET $x";
+
   $posts_view = $channel->prepare
   (
     "SELECT b.*, u.pseudo, c.nom
