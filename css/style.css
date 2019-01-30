@@ -10,10 +10,20 @@ body {
   padding: 0 2rem;
   background-color: #000;
   font-family: 'ZCOOL QingKe HuangYou', cursive;
+  position: relative;
 }
 
-#header, main {
+#hide {
+  position: absolute;
+  z-index: 0;
   background-color: #fff;
+  height: 500px;
+  width: 93.39%;
+}
+#header, main {
+  position: relative;
+  background-color: #fff;
+  z-index: 1;
 }
 
 h1 {
@@ -54,7 +64,6 @@ li {
 
 /* HEADER Style*/
 #header {
-  color: #000;
   text-align: center;
   padding-bottom: 4rem;
 }
@@ -139,7 +148,7 @@ article.art:not(:last-of-type) {
   display: block;
   text-align: center;
   font-size: 3em;
-  width: 40%;
+  width: 45%;
   margin: 2rem auto;
   border: 2px dotted #000;
 }
@@ -255,13 +264,13 @@ textarea {
 
 /* Connexion Page Style */
 form#log_in {
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 #connexion #log_in h2 {
   text-align: center;
   font-weight: normal;
   font-size: 5em;
-  margin-bottom: 4rem;
+  margin: 4rem;
   padding: 1rem;
   border: 2px solid #000;
 }
@@ -373,6 +382,9 @@ input[type='file'] {
     font-size: 1.5em;
   }
 
+  #header {
+    padding-bottom: 2rem;
+  }
   #h_nav > ul {
     display: flex;
     flex-direction: row;
@@ -387,7 +399,7 @@ input[type='file'] {
   }
 
   #articles, #s_post, #show_comms, #test, #result main > section {
-    width: 70%;
+    width: 75%;
     padding: 0 1rem;
     display: inline-block;
   }
@@ -400,6 +412,13 @@ input[type='file'] {
   .art {
     text-align: left;
   }
+  #post .art h2 {
+    text-align: center;
+  }
+  #post .art img {
+    display: block;
+    margin: auto;
+  }
 
   #post main section:not(#s_post) {
     width: 70%;
@@ -407,7 +426,7 @@ input[type='file'] {
   }
 
   aside {
-    width: 30%;
+    width: 25%;
     padding: 2rem;
     vertical-align: top;
     background-color: #000;

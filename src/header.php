@@ -6,7 +6,7 @@ if (isset($_SESSION['user_data'])) {
 } else {
   $_SESSION['test'] = null;
 } ?>
-
+<div id="hide"></div>
 <header id="header">
   <?php if($_SESSION['test'] && $_SESSION['user_data']['role'] == 0): ?>
     <a href="./admin.php" id="admin"><h2>Admin</h2></a>
