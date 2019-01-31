@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       spacePressed = true;
     }
   }
+  
   function keyUpHandler(e) {
     if(e.keyCode == 32) {
       spacePressed = false;
@@ -54,7 +55,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       } else if (b <= 270) {
         document.removeEventListener("keydown", keyDownHandler, false);
         b -= db/2;
-        if (b >= 268) {
+        if (b >= 270) {
           document.addEventListener("keydown", keyDownHandler, false);
         }
         if (a > 480) {

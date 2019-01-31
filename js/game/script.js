@@ -54,7 +54,10 @@ function collisionWater(a, b, p, x)
 {
   if(a >= p-15 && a <= p+15 && b+10 >= 300){
     cancelAnimationFrame(x);
-    location.reload();
+    b = 310;
+    setTimeout(function(){
+      window.location.reload(true);
+    }, 100);
   }
 }
 
