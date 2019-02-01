@@ -7,5 +7,5 @@
   <?php endforeach; ?>
 </ul>
 
-<h2 style="padding-left: 1rem; font-weight: normal; margin-bottom: 1rem;">Game</h2>
-<h3 style="padding-left: 2rem; font-weight: normal;"><a href="jump.php">Jump</a></h3>
+<!-- <h2 style="padding-left: 1rem; font-weight: normal; margin-bottom: 1rem;">Game</h2>
+<h3 style="padding-left: 2rem; font-weight: normal;"><a href="jump.php">Jump</a></h3> -->
