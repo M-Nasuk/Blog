@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include '../utilities.php';
 include 'db.php';
@@ -9,7 +10,7 @@ $img_blob = addslashes(file_get_contents($_FILES['img']['tmp_name']));
 $video = null;
 $date_pub = $_POST['datetime'];
 $categorie = $_POST['categorie'];
-$author = $_POST['author'];
+$author = $_SESSION['user_data']['id_utilisateur'];
 
 $data_billet = [
   'title' => $titre,
